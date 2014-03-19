@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="gr.siokas.plain.app">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="gr.siokas.plain.app.MainActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="gr.siokas.plain.app.Game"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_game"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="gr.siokas.plain.app.Decision"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_decision"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="gr.siokas.plain.app.Intro"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_intro"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="gr.siokas.plain.app.Settings"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="landscape"
+            android:label="Settings" />
+        <activity
+            android:name="gr.siokas.plain.app.Name"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_name"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="gr.siokas.plain.app.Map"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_map"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="gr.siokas.plain.app.WrongMapDecision"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_wrong_map_decision"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="gr.siokas.plain.app.Quiz"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="landscape"
+            android:label="@string/title_activity_quiz" />
+    </application>
+
+</manifest>

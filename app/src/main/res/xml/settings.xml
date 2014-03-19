@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Game Settings">
+        <EditTextPreference
+            android:key="name"
+            android:title="Όνομα"
+            android:defaultValue=""></EditTextPreference>
+        <EditTextPreference
+            android:key="age"
+            android:title="Ηλικία"
+            android:defaultValue="0"></EditTextPreference>
+    </PreferenceCategory>
+
+
+    <PreferenceCategory android:title="Game Settings">
+
+        <PreferenceScreen
+            android:key="button_game"
+            android:persistent="false"
+            android:title="Game Progress">
+
+            <Preference
+                android:key="load"
+                android:summary="Load Game"
+                android:title="Restore Progress"></Preference>
+
+            <Preference
+                android:key="reset"
+                android:summary="Reset Progress"
+                android:title="Start Over"></Preference>
+
+
+        </PreferenceScreen>
+
+        <EditTextPreference
+            android:key="sound"
+            android:summary="Sound"
+            android:title="Sound"></EditTextPreference>
+
+
+        <ListPreference
+            android:entries="@array/langList"
+            android:entryValues="@array/langVal"
+            android:key="lang"
+            android:summary="Select Language"
+            android:title="Language"></ListPreference>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="About">
+        <PreferenceScreen
+            android:key="button_help"
+            android:persistent="false"
+            android:title="Help">
+            <Preference
+                android:summary="How to play the game"
+                android:title="PLAIN Game">
+                <intent android:action="gr.siokas.plain.app.Help" />
+            </Preference>
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:key="button_about"
+            android:persistent="false"
+            android:title="About Us">
+
+            <Preference
+                android:summary="PLAIN Team"
+                android:title="About Us">
+                <intent android:action="gr.siokas.plain.app.AboutUs" />
+            </Preference>
+
+        </PreferenceScreen>
+
+
+    </PreferenceCategory>
+    <PreferenceScreen
+        android:key="version"
+        android:persistent="false"
+        android:enabled="false"
+        android:title="App Version"
+        android:summary="1.0">
+
+        <EditTextPreference
+            android:key="score"
+            android:title="score"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="mistake"
+            android:title="mistake"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="age"
+            android:title="age"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="name"
+            android:title="name"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="sex"
+            android:title="sex"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="key_zoo"
+            android:title="key_zoo"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="key_rotonda"
+            android:title="key_rotonda"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="key_lefkos"
+            android:title="key_lefkos"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="key_kastra"
+            android:title="key_kastra"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="key_dimitrios"
+            android:title="key_dimitrios"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="key_alexandros"
+            android:title="key_alexandros"
+            android:defaultValue="0"></EditTextPreference>
+
+
+    </PreferenceScreen>
+
+
+</PreferenceScreen>
