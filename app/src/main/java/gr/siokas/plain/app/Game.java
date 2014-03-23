@@ -53,13 +53,13 @@ public class Game extends Activity {
                     case 1: // If it is the first step do the following
                         mp.pause();
                         update(true); // Update the image
-                        playSound(2);
+                        playSound(getScore()+1);
                         step++; // Increase the step by one
                         break;
                     case 2: // Again if it is the second step do the following
                         mp.pause();
                         update(true); // Update the image
-                        playSound(3);
+                        playSound(getScore()+1);
                         step++; // Increase the step by one
                         break;
                     case 3: // Finally if it is the third step do the following
@@ -83,13 +83,13 @@ public class Game extends Activity {
                     case 2: // If it is the SECOND step do the following
                         mp.pause();
                         update(false); // Update the image
-                        playSound(1);
+                        playSound(getScore());
                         step--; // Decrease the step by one
                         break;
                     case 3: // If it is the THIRD step do the following
                         mp.pause();
                         update(false); // Update the image
-                        playSound(2);
+                        playSound(getScore());
                         step--; // Decrease the step by one
                         break;
 
@@ -241,14 +241,59 @@ public class Game extends Activity {
     }
 
     void playSound(int x) {
-        if (x == 1) {
+        if (x == 1)
             mp = MediaPlayer.create(this, R.raw.zoo_kartela_1_pili);
-        }
-        if (x == 2) {
+
+        if (x == 2)
             mp = MediaPlayer.create(this, R.raw.zoo_kartela_2_arkoudes);
-        }
+
         if (x == 3)
             mp = MediaPlayer.create(this, R.raw.zoo_kartela_3_pili);
+
+        if (x == 4)
+            mp = MediaPlayer.create(this, R.raw.kastra_katrela_1);
+
+        if (x == 5)
+            mp = MediaPlayer.create(this, R.raw.kastra_katrela_1);
+
+        if (x == 6)
+            mp = MediaPlayer.create(this, R.raw.kastra_katrela_1);
+
+        if (x == 7)
+            mp = MediaPlayer.create(this, R.raw.dimitrios_kartela_1);
+
+        if (x == 8)
+            mp = MediaPlayer.create(this, R.raw.dimitrios_kartela_2);
+
+        if (x == 9)
+            mp = MediaPlayer.create(this, R.raw.dimitrios_kartela_2);
+
+        if (x == 10)
+            mp = MediaPlayer.create(this, R.raw.rotonda_kartela_1);
+
+        if (x == 11)
+            mp = MediaPlayer.create(this, R.raw.rotonda_kartela_2);
+
+        if (x == 12)
+            mp = MediaPlayer.create(this, R.raw.rotonda_kartela_2);
+
+        if (x == 13)
+            mp = MediaPlayer.create(this, R.raw.leukos_kartela_1);
+
+        if (x == 14)
+            mp = MediaPlayer.create(this, R.raw.leukos_kartela_2);
+
+        if (x == 15)
+            mp = MediaPlayer.create(this, R.raw.leukos_kartela_2);
+
+        if (x == 16)
+            mp = MediaPlayer.create(this, R.raw.alexandros_kartela_1);
+
+        if (x == 17)
+            mp = MediaPlayer.create(this, R.raw.alexandros_kartela_2);
+
+        if (x == 18)
+            mp = MediaPlayer.create(this, R.raw.alexandros_kartela_2);
 
         mp.start();
     }

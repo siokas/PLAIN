@@ -8,7 +8,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
+
+import java.util.Random;
 
 
 public class Quiz extends ActionBarActivity {
@@ -35,22 +36,22 @@ public class Quiz extends ActionBarActivity {
 
             case 1:
                 img.setImageResource(R.drawable.maintanos_koritsi);
-                //playSound(2);
+                playSound(2);
                 break;
 
             case 2:
                 img.setImageResource(R.drawable.maintanos_koulourtzis);
-                //playSound(3);
+                playSound(3);
                 break;
 
             case 3:
                 img.setImageResource(R.drawable.maintanos_podilatis);
-                //playSound(4);
+                playSound(4);
                 break;
 
             case 4:
                 img.setImageResource(R.drawable.maintanos_jogging);
-                //playSound(5);
+                playSound(5);
                 break;
 
         }
@@ -60,29 +61,60 @@ public class Quiz extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 mp.stop();
-                saveQuiz((getQuiz()+1)+"");
+                saveQuiz((getQuiz() + 1) + "");
                 startActivity(new Intent(Quiz.this, Map.class));
             }
         });
     }
 
     void playSound(int x) {
-        if (x == 1) {
-            mp = MediaPlayer.create(this, R.raw.zoo_katharistis_eisagogiki_ataka);
+        int rand = getRandNum(1,3);
+
+        switch (x){
+            case 1:
+                mp = MediaPlayer.create(this, R.raw.zoo_katharistis_eisagogiki_ataka);
+                break;
+
+            case 2:
+                if(rand == 1)
+                    mp = MediaPlayer.create(this, R.raw.kastra_pros_dimitrio_quiz_1);
+                if(rand == 2)
+                    mp = MediaPlayer.create(this, R.raw.kastra_pros_dimitrio_quiz_2);
+                if(rand == 3)
+                    mp = MediaPlayer.create(this, R.raw.kastra_pros_dimitrio_quiz_3);
+                break;
+
+            case 3:
+                if(rand == 1)
+                    mp = MediaPlayer.create(this, R.raw.dimitrios_pros_rotonda_quiz_1);
+                if(rand == 2)
+                    mp = MediaPlayer.create(this, R.raw.dimitrios_pros_rotonda_quiz_2);
+                if(rand == 3)
+                    mp = MediaPlayer.create(this, R.raw.dimitrios_pros_rotonda_quiz_3);
+                break;
+
+            case 4:
+                if(rand == 1)
+                    mp = MediaPlayer.create(this, R.raw.rotonda_pros_lefko_quiz_1);
+                if(rand == 2)
+                    mp = MediaPlayer.create(this, R.raw.rotonda_pros_lefko_quiz_2);
+                if(rand == 3)
+                    mp = MediaPlayer.create(this, R.raw.rotonda_pros_lefko_quiz_3);
+                break;
+
+            case 5:
+                if(rand == 1)
+                    mp = MediaPlayer.create(this, R.raw.lefkos_pros_alexandro_quizz_1);
+                if(rand == 2)
+                    mp = MediaPlayer.create(this, R.raw.lefkos_pros_alexandro_quizz_2);
+                if(rand == 3)
+                    mp = MediaPlayer.create(this, R.raw.lefkos_pros_alexandro_quizz_3);
+                break;
         }
-        if (x == 2) {
-            mp = MediaPlayer.create(this, R.raw.zoo_kartela_2_arkoudes);
-        }
-        if (x == 3)
-            mp = MediaPlayer.create(this, R.raw.zoo_kartela_3_pili);
 
         mp.start();
     }
 
-    void changeBack(int img) {
-        RelativeLayout layout = (RelativeLayout) findViewById(R.id.game_layout);
-        layout.setBackgroundResource(img);
-    }
 
     // Call this method to save monuments
     void saveQuiz(String x) {
@@ -97,6 +129,14 @@ public class Quiz extends ActionBarActivity {
         SharedPreferences settings = getSharedPreferences("quiz", 0);
         final String theScore = settings.getString("quiz", "0");
         return (Integer.parseInt(theScore));
+    }
+
+    public static int getRandNum(int min, int max) {
+
+        Random rand = new Random();
+        int randomNum = rand.nextInt((max - min) + 1) + min;
+
+        return randomNum;
     }
 
 }
