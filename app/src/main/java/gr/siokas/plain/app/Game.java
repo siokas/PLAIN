@@ -18,8 +18,8 @@ public class Game extends Activity {
     ImageView image;
     int step = 1;
     MediaPlayer mp;
-    String allMonuments = "";
-    int img4 = 0, img5 = 0, img6 = 0, img7 = 0, img8 = 0, img9 = 0, img10 = 0, img11 = 0, img12 = 0, img13 = 0, img14 = 0, img15 = 0;
+    //String allMonuments = "";
+    //int img4 = 0, img5 = 0, img6 = 0, img7 = 0, img8 = 0, img9 = 0, img10 = 0, img11 = 0, img12 = 0, img13 = 0, img14 = 0, img15 = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,7 @@ public class Game extends Activity {
 
 
         playSound(1);
-        //changeImg();
+        changeImg();
 
         if (getScore() == 0 || getScore() == 3 || getScore() == 6 || getScore() == 9 || getScore() == 12 || getScore() == 15 || getScore() == 18) {
             previous.setVisibility(View.INVISIBLE); // Set the 'previous' button to be invisible
@@ -76,15 +76,20 @@ public class Game extends Activity {
             public void onClick(View v) {
                 switch (step) {
                     case 1: // If it is the first step do the following
+                        mp.pause();
                         update(false); // Update the image
                         step--; // Decrease the step by one
                         break;
                     case 2: // If it is the SECOND step do the following
+                        mp.pause();
                         update(false); // Update the image
+                        playSound(1);
                         step--; // Decrease the step by one
                         break;
                     case 3: // If it is the THIRD step do the following
+                        mp.pause();
                         update(false); // Update the image
+                        playSound(2);
                         step--; // Decrease the step by one
                         break;
 
@@ -110,7 +115,9 @@ public class Game extends Activity {
                 finish();
             } else changeImg();
         } else {
+            /*
             if (getScore() > 3) {
+
                 Monument monument = new Monument("a,d,l,r,k");
                 saveMonument(monument.getRandomMonument());
 
@@ -165,8 +172,10 @@ public class Game extends Activity {
                     img9 = R.drawable.sketch18;
                 }
             }
+            */
+            changeImg();
         }
-        changeImg();
+
     }
 
     void changeImg() {
@@ -176,6 +185,35 @@ public class Game extends Activity {
             changeBack(R.drawable.sketch2); // Change the source of the image
         if (getScore() == 2)
             changeBack(R.drawable.sketch3); // Change the source of the image
+        if (getScore() == 3)
+            changeBack(R.drawable.sketch4); // Change the source of the image
+        if (getScore() == 4)
+            changeBack(R.drawable.sketch5); // Change the source of the image
+        if (getScore() == 5)
+            changeBack(R.drawable.sketch6); // Change the source of the image
+        if (getScore() == 6)
+            changeBack(R.drawable.sketch7); // Change the source of the image
+        if (getScore() == 7)
+            changeBack(R.drawable.sketch8); // Change the source of the image
+        if (getScore() == 8)
+            changeBack(R.drawable.sketch9); // Change the source of the image
+        if (getScore() == 9)
+            changeBack(R.drawable.sketch10); // Change the source of the image
+        if (getScore() == 10)
+            changeBack(R.drawable.sketch11); // Change the source of the image
+        if (getScore() == 11)
+            changeBack(R.drawable.sketch12); // Change the source of the image
+        if (getScore() == 12)
+            changeBack(R.drawable.sketch13); // Change the source of the image
+        if (getScore() == 13)
+            changeBack(R.drawable.sketch14); // Change the source of the image
+        if (getScore() == 14)
+            changeBack(R.drawable.sketch15); // Change the source of the image
+        if (getScore() == 15)
+            changeBack(R.drawable.sketch15); // Change the source of the image
+
+
+        /*
         if (getScore() == 3)
             changeBack(img4); // Change the source of the image
         if (getScore() == 4)
@@ -198,6 +236,8 @@ public class Game extends Activity {
             changeBack(img13); // Change the source of the image
         if (getScore() == 13)
             changeBack(img14); // Change the source of the image
+
+            */
     }
 
     void playSound(int x) {

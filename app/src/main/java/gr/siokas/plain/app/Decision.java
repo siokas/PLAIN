@@ -34,6 +34,7 @@ public class Decision extends ActionBarActivity {
         alert.setPositiveButton("Ναι!", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                mp.stop();
                 startActivity(new Intent(Decision.this, Quiz.class));
             }
         });

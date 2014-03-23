@@ -23,18 +23,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/kastra_bt"
-        android:background="@drawable/button_smartphones"
+        android:background="@drawable/button"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/rotonda_bt"
-        android:layout_marginLeft="45dp" />
+        android:layout_toRightOf="@+id/rotonda_bt" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/dimitrios_bt"
-        android:background="@drawable/button_smartphones"
+        android:background="@drawable/button"
         android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/lefkos_bt" />
+        android:layout_alignBottom="@+id/zoo_bt"
+        android:layout_toLeftOf="@+id/rotonda_bt" />
 
     <Button
         android:layout_width="wrap_content"
@@ -42,13 +42,13 @@
         android:id="@+id/rotonda_bt"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/button_smartphones" />
+        android:background="@drawable/button" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/lefkos_bt"
-        android:background="@drawable/button_smartphones"
+        android:background="@drawable/button"
         android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@+id/alex_bt" />
 
@@ -58,13 +58,13 @@
         android:id="@+id/alex_bt"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/button_smartphones" />
+        android:background="@drawable/button" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/zoo_bt"
-        android:background="@drawable/button_smartphones"
+        android:background="@drawable/button"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />

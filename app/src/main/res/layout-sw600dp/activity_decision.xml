@@ -18,7 +18,7 @@
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="@drawable/epiloges0_megafwna_smartphone" />
+        android:background="@drawable/epiloges0_megafwna" />
 
     <Button
         android:layout_width="wrap_content"
@@ -27,7 +27,7 @@
         android:id="@+id/choise2"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/epiloges0_fulakas_smartphone" />
+        android:background="@drawable/epiloges0_fulakas" />
 
     <Button
         android:layout_width="wrap_content"
@@ -37,6 +37,6 @@
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:background="@drawable/epiloges0_fwnes_smartphone" />
+        android:background="@drawable/epiloges0_fwnes" />
 
 </RelativeLayout>
