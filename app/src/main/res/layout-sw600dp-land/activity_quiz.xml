@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/goon"
-        android:background="@drawable/koumpi_epomeno_smartphone"
+        android:background="@drawable/koumpi_epomeno"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
@@ -24,6 +24,6 @@
         android:id="@+id/maintanos"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/maintanos_brad" />
+        android:background="@drawable/maintanos_brad" />
 
 </RelativeLayout>

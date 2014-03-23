@@ -28,6 +28,8 @@ public class Decision extends ActionBarActivity {
         choise2 = (Button) findViewById(R.id.choise2);
         choise3 = (Button) findViewById(R.id.choise3);
 
+        //update(getDecision());
+
         alert = new AlertDialog.Builder(Decision.this);
         alert.setTitle("Τελική Επιλογή");
         alert.setMessage("Είστε σίγουροι ότι θέλετε να οριστικοποιήσετε αυτήν την επιλογή;");
@@ -70,19 +72,68 @@ public class Decision extends ActionBarActivity {
         });
     }
 
-    void saveScore(String x) {
-        SharedPreferences settings = getSharedPreferences("score", 0);
+    void saveDecision(String x) {
+        SharedPreferences settings = getSharedPreferences("decision", 0);
         SharedPreferences.Editor editor = settings.edit();
-        editor.putString("score", x);
+        editor.putString("decision", x);
         editor.commit();
     }
 
-    int getScore() {
-        SharedPreferences settings = getSharedPreferences("score", 0);
-        final String theScore = settings.getString("score", "0");
+    int getDecision() {
+        SharedPreferences settings = getSharedPreferences("decision", 0);
+        final String theScore = settings.getString("decision", "0");
 
         return (Integer.parseInt(theScore));
     }
+
+    void savePlainData(String x) {
+        SharedPreferences settings = getSharedPreferences("plaindata", 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("plaindata", x);
+        editor.commit();
+    }
+
+
+    void update(int x){
+        boolean tabletSize = getResources().getBoolean(R.bool.isTablet); // Find if it run on tablet or smartphone
+
+        switch (x){
+            case 1:
+                if (tabletSize) {
+                    choise1.setBackgroundResource(R.drawable.epiloges0_megafwna);
+                    choise2.setBackgroundResource(R.drawable.epiloges0_fulakas);
+                    choise3.setBackgroundResource(R.drawable.epiloges0_fwnes);
+                } else {
+                    choise1.setBackgroundResource(R.drawable.epiloges0_megafwna_smartphone);
+                    choise2.setBackgroundResource(R.drawable.epiloges0_fulakas_smartphone);
+                    choise3.setBackgroundResource(R.drawable.epiloges0_fwnes_smartphone);
+                }
+                break;
+            case 2:
+                if (tabletSize) {
+                    choise1.setBackgroundResource(R.drawable.epiloges0_megafwna);
+                    choise2.setBackgroundResource(R.drawable.epiloges0_fulakas);
+                    choise3.setBackgroundResource(R.drawable.epiloges0_fwnes);
+                } else {
+                    choise1.setBackgroundResource(R.drawable.epiloges0_megafwna_smartphone);
+                    choise2.setBackgroundResource(R.drawable.epiloges0_fulakas_smartphone);
+                    choise3.setBackgroundResource(R.drawable.epiloges0_fwnes_smartphone);
+                }
+                break;
+            case 3:
+                if (tabletSize) {
+                    choise1.setBackgroundResource(R.drawable.epiloges0_megafwna);
+                    choise2.setBackgroundResource(R.drawable.epiloges0_fulakas);
+                    choise3.setBackgroundResource(R.drawable.epiloges0_fwnes);
+                } else {
+                    choise1.setBackgroundResource(R.drawable.epiloges0_megafwna_smartphone);
+                    choise2.setBackgroundResource(R.drawable.epiloges0_fulakas_smartphone);
+                    choise3.setBackgroundResource(R.drawable.epiloges0_fwnes_smartphone);
+                }
+                break;
+        }
+    }
+
 
 
     @Override

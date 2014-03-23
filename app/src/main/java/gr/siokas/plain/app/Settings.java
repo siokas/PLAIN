@@ -40,6 +40,17 @@ public class Settings extends PreferenceActivity {
                 SharedPreferences.Editor m = mist.edit();
                 m.putString("mistake", "0");
                 m.commit();
+
+                SharedPreferences quiz = getSharedPreferences("quiz", 0);
+                SharedPreferences.Editor q = quiz.edit();
+                q.putString("quiz", "0");
+                q.commit();
+
+                SharedPreferences decision = getSharedPreferences("decision", 0);
+                SharedPreferences.Editor d = decision.edit();
+                d.putString("decision", "0");
+                d.commit();
+
                 Toast.makeText(Settings.this, "Game Just Reseted!", Toast.LENGTH_SHORT).show();
                 return true;
             }

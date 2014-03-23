@@ -56,11 +56,22 @@ public class Map extends Activity {
             }
         });
 
+        dimitrios_bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Map.this,"Jim",1).show();
+                if(getScore() == 6)
+                    right();
+                else
+                    wrong();
+            }
+        });
+
         rotonda_bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(Map.this,"Rot",1).show();
-                if (getScore() == 6)
+                if (getScore() == 9)
                     right();
                 else
                     wrong();
@@ -71,18 +82,7 @@ public class Map extends Activity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(Map.this,"Lefk",1).show();
-                if (getScore() == 9)
-                    right();
-                else
-                    wrong();
-            }
-        });
-
-        dimitrios_bt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(Map.this,"Jim",1).show();
-                if(getScore() == 12)
+                if (getScore() == 12)
                     right();
                 else
                     wrong();

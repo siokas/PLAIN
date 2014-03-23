@@ -55,9 +55,11 @@ public class Intro extends ActionBarActivity {
         previous.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mp.pause();
                 changeImage(R.drawable.intro1); // Change the source of the image
                 previous.setVisibility(View.INVISIBLE); // Set the 'previous' button to be visible
                 playSound(1);
+                step--;
             }
         });
 
