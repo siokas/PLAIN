@@ -22,54 +22,50 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
         android:id="@+id/kastra_bt"
-        android:layout_marginRight="285dp"
+        android:background="@drawable/button"
         android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_toRightOf="@+id/rotonda_bt" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
         android:id="@+id/dimitrios_bt"
-        android:layout_below="@+id/kastra_bt"
-        android:layout_toRightOf="@+id/key"
-        android:layout_marginLeft="82dp" />
+        android:background="@drawable/button"
+        android:layout_alignParentTop="true"
+        android:layout_alignBottom="@+id/zoo_bt"
+        android:layout_toLeftOf="@+id/rotonda_bt" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
         android:id="@+id/rotonda_bt"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
         android:id="@+id/lefkos_bt"
+        android:background="@drawable/button"
         android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/dimitrios_bt"
-        android:layout_alignStart="@+id/dimitrios_bt"
-        android:layout_marginBottom="86dp" />
+        android:layout_toLeftOf="@+id/alex_bt" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
         android:id="@+id/alex_bt"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
         android:id="@+id/zoo_bt"
-        android:layout_alignTop="@+id/dimitrios_bt"
+        android:background="@drawable/button"
+        android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 </RelativeLayout>

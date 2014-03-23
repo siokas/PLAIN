@@ -48,6 +48,7 @@ public class Map extends Activity {
         kastra_bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(Map.this,"Kastra",1).show();
                 if (getScore() == 3)
                     right();
                 else
@@ -58,6 +59,7 @@ public class Map extends Activity {
         rotonda_bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(Map.this,"Rot",1).show();
                 if (getScore() == 6)
                     right();
                 else
@@ -68,6 +70,7 @@ public class Map extends Activity {
         lefkos_bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(Map.this,"Lefk",1).show();
                 if (getScore() == 9)
                     right();
                 else
@@ -78,6 +81,7 @@ public class Map extends Activity {
         dimitrios_bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(Map.this,"Jim",1).show();
                 if(getScore() == 12)
                     right();
                 else
@@ -88,6 +92,7 @@ public class Map extends Activity {
         alexandros_bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(Map.this,"Alx",1).show();
                 if(getScore() == 15)
                     right();
                 else

@@ -125,6 +125,10 @@
             android:key="key_alexandros"
             android:title="key_alexandros"
             android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="monuments"
+            android:title="monuments"
+            android:defaultValue="0"></EditTextPreference>
 
 
     </PreferenceScreen>

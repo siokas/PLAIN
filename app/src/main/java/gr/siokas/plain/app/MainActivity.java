@@ -1,6 +1,8 @@
 package gr.siokas.plain.app;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -19,7 +21,7 @@ import java.util.List;
 
 public class MainActivity extends ActionBarActivity {
 
-    Button start, settings;
+    Button start, settings, info;
     Dialog dialog;
 
 
@@ -31,6 +33,39 @@ public class MainActivity extends ActionBarActivity {
 
         start = (Button) findViewById(R.id.start);
         settings = (Button) findViewById(R.id.settings);
+        info = (Button) findViewById(R.id.info);
+
+        info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+                alert.setTitle("Οδηγείες Παιχνιδιού");
+                alert.setMessage("Ο Άργος, το χρυσό κυνηγόσκυλο, χάθηκε στη Θεσσαλονίκη.\n" +
+                        "Δουλειά του Φοίβου και της Άρτεμης είναι να τον βρούν. \n" +
+                        "Βοήθησέ τους! \n" +
+                        " \n" +
+                        "Προτείνετε αποτελεσματικές στρατηγικές αναζήτησης του Άργου. \n" +
+                        "Λύστε τους γρίφους που οδηγούν στο μνημείο όπου είναι κρυμμένος ο Άργος!\n" +
+                        "Επισκεφτείτε τα πιο εμβληματικά μνημεία της Θεσσαλονίκης ακολουθώντας τα στοιχεία που παρέχουν οι χαρακτήρες του παιχνιδιού. Εξερευνήστε την πόλη!.\n" +
+                        "Ανακαλύψτε τις κρυμμένες αυτοκόλλητες ετικέτες που υπάρχουν στα μνημεία και αποκρυππτογραφείστε τους κωδικούς.\n" +
+                        "Ανακαλύψτε που κρύβεται  ο Άργος και κερδίστε!\n" +
+                        "\n" +
+                        "Tα παιχνίδια “Ο Άργος τό ‘σκασε…” παίζονται σε 3 επίπεδα:\n" +
+                        "\n" +
+                        "Καθοδηγήστε τη στρατηγική αναζήτησης που εφαρμόζουν ο Φοίβος και η Άρτεμις σε κάθε μνημείο (εύκολοι γρίφοι για μικρότερα παιδιά)\n" +
+                        "Προάγετε την αναζήτηση απο το ένα μνημείο στο επόμενο (γρίφος μνημείων)\n" +
+                        "Αναζητήστε την ακριβή θέση  όπου βρισκόταν η σκιτσογράφος του PLAIN όταν ζωγράφισε την κάθε καρτέλα μνημείου. Σταθείτε στην ίδια θέση και κοιτάξτε τη σκηνή. " +
+                        "Κάτι κοντά στη διασταύρωση των διαγωνίων του σκίτσου θα λείπει! Ψάξτε στο σημείο αυτό, βρείτε και σκανάρετε την ετικέτα PLAIN (QR code), συλλέξτε τη λέξη κλειδί " +
+                        "που υπάρχει στο κάθε μνημείο σε 2 θέσεις (κυνήγι θησαυρού).\n");
+                alert.setNegativeButton("Επιστροφή", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                alert.show();
+            }
+        });
 
         start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,22 +106,22 @@ public class MainActivity extends ActionBarActivity {
         dataAd.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sex.setAdapter(dataAd);
 
-       save.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               if(name.getText().toString().equals("") || age.getText().toString().equals("")){
-                   // Do this
-               }else{
-                   saveName(name.getText().toString());
-                   saveAge(age.getText().toString());
-                   if(sex.getSelectedItem().toString().equals("Άρρεν"))
-                   saveSex("male");
-                   else
-                   saveSex("female");
-                   startActivity(new Intent(MainActivity.this, Intro.class));
-               }
-           }
-       });
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (name.getText().toString().equals("") || age.getText().toString().equals("")) {
+                    // Do this
+                } else {
+                    saveName(name.getText().toString());
+                    saveAge(age.getText().toString());
+                    if (sex.getSelectedItem().toString().equals("Άρρεν"))
+                        saveSex("male");
+                    else
+                        saveSex("female");
+                    startActivity(new Intent(MainActivity.this, Intro.class));
+                }
+            }
+        });
 
         dialog.show();
 

@@ -8,7 +8,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="gr.siokas.plain.app.Game"
-    android:background="@drawable/logo">
+    android:background="@drawable/sketch1">
 
     <Button
         android:layout_width="wrap_content"

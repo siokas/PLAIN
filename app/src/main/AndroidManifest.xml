@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="gr.siokas.plain.app">
+    package="gr.siokas.plain.app" >
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
         <activity
             android:name="gr.siokas.plain.app.MainActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name"
-            android:screenOrientation="landscape">
+            android:screenOrientation="landscape" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,8 +36,8 @@
         <activity
             android:name="gr.siokas.plain.app.Settings"
             android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="landscape"
-            android:label="Settings" />
+            android:label="Settings"
+            android:screenOrientation="landscape" />
         <activity
             android:name="gr.siokas.plain.app.Name"
             android:configChanges="orientation|keyboardHidden"
@@ -56,8 +56,12 @@
         <activity
             android:name="gr.siokas.plain.app.Quiz"
             android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="landscape"
-            android:label="@string/title_activity_quiz" />
+            android:label="@string/title_activity_quiz"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="gr.siokas.plain.app.About"
+            android:label="@string/title_activity_about" >
+        </activity>
     </application>
 
 </manifest>
