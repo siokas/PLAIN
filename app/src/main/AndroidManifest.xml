@@ -68,8 +68,22 @@
         <activity
             android:name="gr.siokas.plain.app.Noisis"
             android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_noisis"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="gr.siokas.plain.app.AboutPlain"
+            android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="landscape"
-            android:label="@string/title_activity_noisis"></activity>
+            android:label="@string/title_activity_about_plain">
+
+            <intent-filter>
+                <action android:name="gr.siokas.plain.app.AboutUs" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+
+        </activity>
     </application>
 
 </manifest>
