@@ -51,6 +51,16 @@ public class Settings extends PreferenceActivity {
                 d.putString("decision", "0");
                 d.commit();
 
+                SharedPreferences plaindata = getSharedPreferences("plaindata", 0);
+                SharedPreferences.Editor p = plaindata.edit();
+                p.putString("plaindata", "0");
+                p.commit();
+
+                SharedPreferences correctKeys = getSharedPreferences("correctKeys", 0);
+                SharedPreferences.Editor cor = correctKeys.edit();
+                cor.putString("correctKeys", "0");
+                cor.commit();
+
                 Toast.makeText(Settings.this, "Game Just Reseted!", Toast.LENGTH_SHORT).show();
                 return true;
             }

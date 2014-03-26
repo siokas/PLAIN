@@ -141,6 +141,10 @@
             android:key="monuments"
             android:title="monuments"
             android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="correctKeys"
+            android:title="correctKeys"
+            android:defaultValue="0"></EditTextPreference>
 
 
     </PreferenceScreen>

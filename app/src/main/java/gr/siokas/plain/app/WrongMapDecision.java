@@ -9,7 +9,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 public class WrongMapDecision extends ActionBarActivity {
@@ -31,25 +30,25 @@ public class WrongMapDecision extends ActionBarActivity {
             case 0:
                 nWrongs.setText("1");
                 saveMistakes("1");
-                Toast.makeText(WrongMapDecision.this, "Quiz Reminder", Toast.LENGTH_LONG).show();
+               // Toast.makeText(WrongMapDecision.this, "Quiz Reminder", Toast.LENGTH_LONG).show();
                 mistakes++;
                 break;
             case 1:
                 nWrongs.setText("2");
                 saveMistakes("2");
-                Toast.makeText(WrongMapDecision.this, "Hint 1", Toast.LENGTH_LONG).show();
+               // Toast.makeText(WrongMapDecision.this, "Hint 1", Toast.LENGTH_LONG).show();
                 mistakes++;
                 break;
             case 2:
                 nWrongs.setText("3");
                 saveMistakes("3");
-                Toast.makeText(WrongMapDecision.this, "Hint 2", Toast.LENGTH_LONG).show();
+              //  Toast.makeText(WrongMapDecision.this, "Hint 2", Toast.LENGTH_LONG).show();
                 mistakes++;
                 break;
             case 3:
                 nWrongs.setText("4");
                 saveMistakes("4");
-                Toast.makeText(WrongMapDecision.this, "Random Quizzes", Toast.LENGTH_LONG).show();
+              //  Toast.makeText(WrongMapDecision.this, "Random Quizzes", Toast.LENGTH_LONG).show();
                 mistakes++;
                 break;
         }

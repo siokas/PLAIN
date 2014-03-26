@@ -7,8 +7,6 @@ import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -18,6 +16,7 @@ public class Decision extends ActionBarActivity {
     Button choise1, choise2, choise3;
     MediaPlayer mp;
     AlertDialog.Builder alert;
+    String plainData = "0";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +37,8 @@ public class Decision extends ActionBarActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 mp.stop();
-                saveDecision((getDecision()+1)+"");
+                saveDecision((getDecision() + 1) + "");
+                savePlainData("," + getDecision() + "" + plainData); // Save data...
                 startActivity(new Intent(Decision.this, Quiz.class));
             }
         });
@@ -52,7 +52,8 @@ public class Decision extends ActionBarActivity {
         choise1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                playSound(1);
+                playSound((getDecision()*10)+1);
+                plainData = "A";
                 alert.show();
             }
         });
@@ -60,7 +61,8 @@ public class Decision extends ActionBarActivity {
         choise2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                playSound(2);
+                playSound((getDecision()*10)+2);
+                plainData = "B";
                 alert.show();
             }
         });
@@ -68,7 +70,8 @@ public class Decision extends ActionBarActivity {
         choise3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                playSound(3);
+                playSound((getDecision()*10)+3);
+                plainData = "C";
                 alert.show();
             }
         });
@@ -96,77 +99,87 @@ public class Decision extends ActionBarActivity {
     }
 
 
-    void update(int x){
-        boolean tabletSize = getResources().getBoolean(R.bool.isTablet); // Find if it run on tablet or smartphone
+    void update(int x) {
 
-        switch (x){
+        switch (x) {
+            case 0:
+                choise1.setBackgroundResource(R.drawable.epiloges0_megafwno);
+                choise2.setBackgroundResource(R.drawable.epiloges0_fulakas);
+                choise3.setBackgroundResource(R.drawable.epiloges0_fwnes);
+                break;
+
             case 1:
-                if (tabletSize) {
-                    choise1.setBackgroundResource(R.drawable.epiloges0_megafwno);
-                    choise2.setBackgroundResource(R.drawable.epiloges0_fulakas);
-                    choise3.setBackgroundResource(R.drawable.epiloges0_fwnes);
-                } else {
-                    choise1.setBackgroundResource(R.drawable.epiloges0_megafwna_smartphone);
-                    choise2.setBackgroundResource(R.drawable.epiloges0_fulakas_smartphone);
-                    choise3.setBackgroundResource(R.drawable.epiloges0_fwnes_smartphone);
-                }
+                choise1.setBackgroundResource(R.drawable.epiloges1_1_giagia);
+                choise2.setBackgroundResource(R.drawable.epiloges1_1_pateras_paidi);
+                choise3.setBackgroundResource(R.drawable.epiloges1_1_tileskopio);
                 break;
+
             case 2:
-                if (tabletSize) {
-                    choise1.setBackgroundResource(R.drawable.epiloges1_1_giagia);
-                    choise2.setBackgroundResource(R.drawable.epiloges1_1_pateras_paidi);
-                    choise3.setBackgroundResource(R.drawable.epiloges1_1_tileskopio);
-                } else {
-                    choise1.setBackgroundResource(R.drawable.epiloges1_1_giagia);
-                    choise2.setBackgroundResource(R.drawable.epiloges1_1_pateras_paidi);
-                    choise3.setBackgroundResource(R.drawable.epiloges1_1_tileskopio);
-                }
+                choise1.setBackgroundResource(R.drawable.epiloges2_2_tourist_guide);
+                choise2.setBackgroundResource(R.drawable.epiloges2_2_paidia);
+                choise3.setBackgroundResource(R.drawable.epiloges2_2_skulocookies);
                 break;
+
             case 3:
-                if (tabletSize) {
-                    choise1.setBackgroundResource(R.drawable.epiloges2_2_tourist_guide);
-                    choise2.setBackgroundResource(R.drawable.epiloges2_2_paidia);
-                    choise3.setBackgroundResource(R.drawable.epiloges2_2_skulocookies);
-                } else {
-                    choise1.setBackgroundResource(R.drawable.epiloges2_2_tourist_guide);
-                    choise2.setBackgroundResource(R.drawable.epiloges2_2_paidia);
-                    choise3.setBackgroundResource(R.drawable.epiloges2_2_skulocookies);
-                }
+                choise1.setBackgroundResource(R.drawable.epiloges2_1_eisitiria);
+                choise2.setBackgroundResource(R.drawable.epiloges2_1_souvlatzis);
+                choise3.setBackgroundResource(R.drawable.epiloges2_1_astun_skulos);
                 break;
+
+            case 4:
+                choise1.setBackgroundResource(R.drawable.epiloges1_2_psaras);
+                choise2.setBackgroundResource(R.drawable.epiloges1_2_odigos);
+                choise3.setBackgroundResource(R.drawable.epiloges1_2_kualia);
+                break;
+
+            case 5:
+                choise1.setBackgroundResource(R.drawable.epiloges3_skatades);
+                choise2.setBackgroundResource(R.drawable.epiloges3_astunom);
+                choise3.setBackgroundResource(R.drawable.epiloges3_sfurixtra);
+                break;
+
+
         }
-    }
-
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.decision, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     void playSound(int x) {
-        if (x == 1) {
+        if (x == 11)
             mp = MediaPlayer.create(this, R.raw.zoo_stratigiki_3_anakoinosi_sta_megafona);
-        }
-        if (x == 2) {
+
+        if (x == 12)
             mp = MediaPlayer.create(this, R.raw.zoo_stratigiki_2_erotisi_sto_filaka);
-        }
-        if (x == 3)
+
+        if (x == 13)
             mp = MediaPlayer.create(this, R.raw.zoo_stratigiki_1_psaksimo);
+
+        if (x == 21)
+            mp = MediaPlayer.create(this, R.raw.kastra_epilogi_1_giagia);
+
+        if (x == 22)
+            mp = MediaPlayer.create(this, R.raw.kastra_epilogi_2_afentiko_skilou);
+
+        if (x == 23)
+            mp = MediaPlayer.create(this, R.raw.kastra_epilogi_3_tileskopio);
+
+        if (x == 31)
+            mp = MediaPlayer.create(this, R.raw.rotonda_epilogi_1_politis_eisitirion);
+
+        if (x == 32)
+            mp = MediaPlayer.create(this, R.raw.rotonda_epilogi_2_psistis);
+
+        if (x == 33)
+            mp = MediaPlayer.create(this, R.raw.rotonda_epilogi_3_astinomikos_skilos);
+
+        if (x == 41)
+            mp = MediaPlayer.create(this, R.raw.lefkos_epilogi_1_psaras);
+
+        if (x == 42)
+            mp = MediaPlayer.create(this, R.raw.lefkos_epilogi_2_odigos_leoforeiou);
+
+        if (x == 43)
+            mp = MediaPlayer.create(this, R.raw.lefkos_epilogi_3_kualia);
+
+
 
         mp.start();
     }

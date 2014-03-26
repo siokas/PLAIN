@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 
@@ -16,6 +18,7 @@ public class Map extends Activity {
     Button zoo_bt, kastra_bt, rotonda_bt, lefkos_bt, dimitrios_bt, alexandros_bt, key;
     Dialog dialog;
     EditText zoo, lefkos, dimitrios, kastra, alexandros, rotonda;
+    MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +51,6 @@ public class Map extends Activity {
         kastra_bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Map.this,"Kastra",1).show();
                 if (getScore() == 3)
                     right();
                 else
@@ -59,7 +61,6 @@ public class Map extends Activity {
         dimitrios_bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Map.this,"Jim",1).show();
                 if(getScore() == 6)
                     right();
                 else
@@ -70,7 +71,6 @@ public class Map extends Activity {
         rotonda_bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Map.this,"Rot",1).show();
                 if (getScore() == 9)
                     right();
                 else
@@ -81,7 +81,6 @@ public class Map extends Activity {
         lefkos_bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Map.this,"Lefk",1).show();
                 if (getScore() == 12)
                     right();
                 else
@@ -92,7 +91,6 @@ public class Map extends Activity {
         alexandros_bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Map.this,"Alx",1).show();
                 if(getScore() == 15)
                     right();
                 else
@@ -129,39 +127,66 @@ public class Map extends Activity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (zoo.getText().toString().toUpperCase().equals("ΙΕΡΑΞ"))
+                if (zoo.getText().toString().toUpperCase().equals("ΙΕΡΑΞ")){
                     saveZoo(zoo.getText().toString().toUpperCase());
+                    playCorrectSound();
+                }
                 else
-                    Toast.makeText(Map.this, "ERROR", 1);
+                    Toast.makeText(Map.this, "Λάθος! Προσπαθήστε ξανά", Toast.LENGTH_LONG);
 
-                if (alexandros.getText().toString().toUpperCase().equals("ΣΑΡΙΣΑ"))
+                if (alexandros.getText().toString().toUpperCase().equals("ΣΑΡΙΣΑ")){
                     saveAlexandros(alexandros.getText().toString().toUpperCase());
+                    playCorrectSound();
+                }
                 else
-                    Toast.makeText(Map.this, "ERROR", 1);
+                    Toast.makeText(Map.this, "Λάθος! Προσπαθήστε ξανά", Toast.LENGTH_LONG);
 
-                if (dimitrios.getText().toString().toUpperCase().equals("ΝΑΟΣ"))
+                if (dimitrios.getText().toString().toUpperCase().equals("ΝΑΟΣ")){
                     saveDimitrios(dimitrios.getText().toString().toUpperCase());
+                    playCorrectSound();
+                }
                 else
-                    Toast.makeText(Map.this, "ERROR", 1);
+                    Toast.makeText(Map.this, "Λάθος! Προσπαθήστε ξανά", Toast.LENGTH_LONG);
 
-                if (lefkos.getText().toString().toUpperCase().equals("ΟΡΙΖΩΝ"))
+                if (lefkos.getText().toString().toUpperCase().equals("ΟΡΙΖΩΝ")){
                     saveLefkos(lefkos.getText().toString().toUpperCase());
+                    playCorrectSound();
+                }
                 else
-                    Toast.makeText(Map.this, "ERROR", 1);
+                    Toast.makeText(Map.this, "Λάθος! Προσπαθήστε ξανά", Toast.LENGTH_LONG);
 
-                if (kastra.getText().toString().toUpperCase().equals("ΗΛΙΟΣ"))
+                if (kastra.getText().toString().toUpperCase().equals("ΗΛΙΟΣ")){
                     saveKastra(kastra.getText().toString().toUpperCase());
+                    playCorrectSound();
+                }
                 else
-                    Toast.makeText(Map.this, "ERROR", 1);
+                    Toast.makeText(Map.this, "Λάθος! Προσπαθήστε ξανά", Toast.LENGTH_LONG);
 
-                if (rotonda.getText().toString().toUpperCase().equals("ΣΤΡΟΓΓΥΛΗ"))
+                if (rotonda.getText().toString().toUpperCase().equals("ΣΤΡΟΓΓΥΛΗ")){
                     saveRotonda(rotonda.getText().toString().toUpperCase());
+                    playCorrectSound();
+                }
                 else
-                    Toast.makeText(Map.this, "ERROR", 1);
+                    Toast.makeText(Map.this, "Λάθος! Προσπαθήστε ξανά", Toast.LENGTH_LONG);
+
 
                 dialog.dismiss();
+
+                checkCorrectKeys();
             }
         });
+    }
+
+    void playCorrectSound(){
+        mp = MediaPlayer.create(Map.this, R.raw.correct);
+        mp.start();
+    }
+
+    void checkCorrectKeys(){
+        if (getCorrectKeys() == 6){
+            playCorrectSound();
+            changeBack(R.drawable.xartis_complete);
+        }
     }
 
     // Call this method to get current the score value
@@ -175,27 +200,49 @@ public class Map extends Activity {
         if (getZoo().equals("ΙΕΡΑΞ")){
             zoo.setText("ΙΕΡΑΞ");
             zoo.setEnabled(false);
+            saveCorrectKeys((getCorrectKeys()+1)+"");
         }
         if (getAlexandros().equals("ΣΑΡΙΣΑ")){
             alexandros.setText("ΣΑΡΙΣΑ");
             alexandros.setEnabled(false);
+            saveCorrectKeys((getCorrectKeys()+1)+"");
         }
         if (getDimitrios().equals("ΝΑΟΣ")){
             dimitrios.setText("ΝΑΟΣ");
             dimitrios.setEnabled(false);
+            saveCorrectKeys((getCorrectKeys()+1)+"");
         }
         if (getKastra().equals("ΗΛΙΟΣ")){
             kastra.setText("ΗΛΙΟΣ");
             kastra.setEnabled(false);
+            saveCorrectKeys((getCorrectKeys()+1)+"");
         }
         if (getLefkos().equals("ΟΡΙΖΩΝ")){
             lefkos.setText("ΟΡΙΖΩΝ");
             lefkos.setEnabled(false);
+            saveCorrectKeys((getCorrectKeys()+1)+"");
         }
         if (getRotonda().equals("ΣΤΡΟΓΓΥΛΗ")){
             rotonda.setText("ΣΤΡΟΓΓΥΛΗ");
             rotonda.setEnabled(false);
+            saveCorrectKeys((getCorrectKeys()+1)+"");
         }
+    }
+
+    void saveCorrectKeys(String x) {
+        SharedPreferences settings = getSharedPreferences("correctKeys", 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("correctKeys", x);
+        editor.commit();
+    }
+
+
+
+    int getCorrectKeys() {
+        SharedPreferences settings = getSharedPreferences("correctKeys", 0);
+        final String correctKeys = settings.getString("correctKeys", "0");
+
+        return (Integer.parseInt(correctKeys));
     }
 
 
@@ -288,5 +335,10 @@ public class Map extends Activity {
         SharedPreferences settings = getSharedPreferences("key_alexandros", 0);
         final String theString = settings.getString("key_alexandros", "0");
         return (theString);
+    }
+
+    void changeBack(int img) {
+        RelativeLayout layout = (RelativeLayout) findViewById(R.id.game_layout);
+        layout.setBackgroundResource(img);
     }
 }
