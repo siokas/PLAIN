@@ -30,7 +30,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageView123"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/maintanos_brad"
         android:layout_alignParentBottom="true" />
 
 </RelativeLayout>

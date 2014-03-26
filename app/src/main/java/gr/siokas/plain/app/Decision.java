@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 
@@ -40,6 +41,7 @@ public class Decision extends ActionBarActivity {
                 saveDecision((getDecision() + 1) + "");
                 savePlainData("," + getDecision() + "" + plainData); // Save data...
                 startActivity(new Intent(Decision.this, Quiz.class));
+                finish();
             }
         });
         alert.setNegativeButton("Όχι", new DialogInterface.OnClickListener() {
@@ -201,6 +203,24 @@ public class Decision extends ActionBarActivity {
 
 
         mp.start();
+    }
+
+    // Call this method if the back button is pressed (for lower apis)
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            startActivity(new Intent(Decision.this, MainActivity.class)); // Go to the Main Activity (Game Menu)
+            finish();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    // Call this method if the back button is pressed (for higher apis)
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(Decision.this, MainActivity.class));
+        finish();
     }
 
 }

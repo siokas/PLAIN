@@ -1,10 +1,11 @@
 package gr.siokas.plain.app;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -14,7 +15,7 @@ import android.widget.Toast;
 import java.util.Random;
 
 
-public class WrongMapDecision extends ActionBarActivity {
+public class WrongMapDecision extends Activity {
 
     TextView nWrongs;
     Button goback;
@@ -102,6 +103,7 @@ public class WrongMapDecision extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(WrongMapDecision.this, Map.class));
+                finish();
             }
         });
 
@@ -214,6 +216,24 @@ public class WrongMapDecision extends ActionBarActivity {
         int randomNum = rand.nextInt((max - min) + 1) + min;
 
         return randomNum;
+    }
+
+    // Call this method if the back button is pressed (for lower apis)
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            startActivity(new Intent(WrongMapDecision.this, MainActivity.class)); // Go to the Main Activity
+            finish();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    // Call this method if the back button is pressed (for higher apis)
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(WrongMapDecision.this, MainActivity.class));
+        finish();
     }
 
 

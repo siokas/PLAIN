@@ -1,38 +1,46 @@
 package gr.siokas.plain.app;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
+import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.KeyEvent;
+import android.widget.Toast;
 
 
-public class Noisis extends ActionBarActivity {
+public class Noisis extends Activity {
 
+    MediaPlayer mp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_noisis);
+
+        mp = MediaPlayer.create(this, R.raw.correct);
+        mp.start();
+
+        Toast.makeText(Noisis.this, "Συγχαρητήρια! Το βρήκες! Ο Άργος κρύβεται στο Μουσίο Τεχνολογίας 'Νόησις' ", Toast.LENGTH_LONG).show();
+
+
     }
 
-
+    // Call this method if the back button is pressed (for lower apis)
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.noisis, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            startActivity(new Intent(Noisis.this, MainActivity.class));
+            finish();
             return true;
         }
-        return super.onOptionsItemSelected(item);
+        return super.onKeyDown(keyCode, event);
     }
+
+    // Call this method if the back button is pressed (for higher apis)
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(Noisis.this, MainActivity.class));
+        finish();
+    }
+
 
 }

@@ -1,15 +1,16 @@
 package gr.siokas.plain.app;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 
 
-public class Intro extends ActionBarActivity {
+public class Intro extends Activity {
 
     // Declare the variables
     Button next, previous;
@@ -45,6 +46,7 @@ public class Intro extends ActionBarActivity {
                     case 2: // Again if it is the second step do the following
                         mp.pause();
                         startActivity(new Intent(Intro.this, Game.class)); // Start the 'Game' Activity
+                        finish();
                         break;
                 }
             }
@@ -78,6 +80,24 @@ public class Intro extends ActionBarActivity {
     void changeImage(int img) {
         RelativeLayout layout = (RelativeLayout) findViewById(R.id.intro_layout);
         layout.setBackgroundResource(img);
+    }
+
+    // Call this method if the back button is pressed (for lower apis)
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            startActivity(new Intent(Intro.this, MainActivity.class)); // Go to the Main Activity
+            finish();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    // Call this method if the back button is pressed (for higher apis)
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(Intro.this, MainActivity.class));
+        finish();
     }
 
 }

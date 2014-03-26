@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -252,6 +253,24 @@ public class Game extends Activity {
         SharedPreferences settings = getSharedPreferences("monuments", 0);
         final String theMonuments = settings.getString("monuments", "0");
         return theMonuments;
+    }
+
+    // Call this method if the back button is pressed (for lower apis)
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            startActivity(new Intent(Game.this, MainActivity.class)); // Go to the Main Activity
+            finish();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    // Call this method if the back button is pressed (for higher apis)
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(Game.this, MainActivity.class));
+        finish();
     }
 
 

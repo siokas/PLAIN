@@ -186,6 +186,7 @@ public class Map extends Activity {
 
                 dialog.dismiss();
 
+                checkDatabase();
                 checkCorrectKeys();
             }
         });
@@ -383,17 +384,21 @@ public class Map extends Activity {
         layout.setBackgroundResource(img);
     }
 
+    // Call this method if the back button is pressed (for lower apis)
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             startActivity(new Intent(Map.this, MainActivity.class));
+            finish();
             return true;
         }
         return super.onKeyDown(keyCode, event);
     }
 
+    // Call this method if the back button is pressed (for higher apis)
     @Override
     public void onBackPressed() {
         startActivity(new Intent(Map.this, MainActivity.class));
+        finish();
     }
 }

@@ -1,10 +1,11 @@
 package gr.siokas.plain.app;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -12,7 +13,7 @@ import android.widget.ImageView;
 import java.util.Random;
 
 
-public class Quiz extends ActionBarActivity {
+public class Quiz extends Activity {
 
     Button goon;
     MediaPlayer mp;
@@ -68,6 +69,7 @@ public class Quiz extends ActionBarActivity {
                 mp.stop();
                 saveQuiz((getQuiz() + 1) + "");
                 startActivity(new Intent(Quiz.this, Map.class));
+                finish();
             }
         });
     }
@@ -151,6 +153,24 @@ public class Quiz extends ActionBarActivity {
         int randomNum = rand.nextInt((max - min) + 1) + min;
 
         return randomNum;
+    }
+
+    // Call this method if the back button is pressed (for lower apis)
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            startActivity(new Intent(Quiz.this, MainActivity.class)); // Go to the Main Activity
+            finish();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    // Call this method if the back button is pressed (for higher apis)
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(Quiz.this, MainActivity.class));
+        finish();
     }
 
 
