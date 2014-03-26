@@ -28,8 +28,9 @@ public class Decision extends ActionBarActivity {
         choise2 = (Button) findViewById(R.id.choise2);
         choise3 = (Button) findViewById(R.id.choise3);
 
-        //update(getDecision());
+        update(getDecision()); // Call update method to change the images
 
+        // Initialize the alert dialog
         alert = new AlertDialog.Builder(Decision.this);
         alert.setTitle("Τελική Επιλογή");
         alert.setMessage("Είστε σίγουροι ότι θέλετε να οριστικοποιήσετε αυτήν την επιλογή;");
@@ -37,13 +38,14 @@ public class Decision extends ActionBarActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 mp.stop();
+                saveDecision((getDecision()+1)+"");
                 startActivity(new Intent(Decision.this, Quiz.class));
             }
         });
         alert.setNegativeButton("Όχι", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
+                mp.stop();
             }
         });
 
@@ -100,7 +102,7 @@ public class Decision extends ActionBarActivity {
         switch (x){
             case 1:
                 if (tabletSize) {
-                    choise1.setBackgroundResource(R.drawable.epiloges0_megafwna);
+                    choise1.setBackgroundResource(R.drawable.epiloges0_megafwno);
                     choise2.setBackgroundResource(R.drawable.epiloges0_fulakas);
                     choise3.setBackgroundResource(R.drawable.epiloges0_fwnes);
                 } else {
@@ -111,24 +113,24 @@ public class Decision extends ActionBarActivity {
                 break;
             case 2:
                 if (tabletSize) {
-                    choise1.setBackgroundResource(R.drawable.epiloges0_megafwna);
-                    choise2.setBackgroundResource(R.drawable.epiloges0_fulakas);
-                    choise3.setBackgroundResource(R.drawable.epiloges0_fwnes);
+                    choise1.setBackgroundResource(R.drawable.epiloges1_1_giagia);
+                    choise2.setBackgroundResource(R.drawable.epiloges1_1_pateras_paidi);
+                    choise3.setBackgroundResource(R.drawable.epiloges1_1_tileskopio);
                 } else {
-                    choise1.setBackgroundResource(R.drawable.epiloges0_megafwna_smartphone);
-                    choise2.setBackgroundResource(R.drawable.epiloges0_fulakas_smartphone);
-                    choise3.setBackgroundResource(R.drawable.epiloges0_fwnes_smartphone);
+                    choise1.setBackgroundResource(R.drawable.epiloges1_1_giagia);
+                    choise2.setBackgroundResource(R.drawable.epiloges1_1_pateras_paidi);
+                    choise3.setBackgroundResource(R.drawable.epiloges1_1_tileskopio);
                 }
                 break;
             case 3:
                 if (tabletSize) {
-                    choise1.setBackgroundResource(R.drawable.epiloges0_megafwna);
-                    choise2.setBackgroundResource(R.drawable.epiloges0_fulakas);
-                    choise3.setBackgroundResource(R.drawable.epiloges0_fwnes);
+                    choise1.setBackgroundResource(R.drawable.epiloges2_2_tourist_guide);
+                    choise2.setBackgroundResource(R.drawable.epiloges2_2_paidia);
+                    choise3.setBackgroundResource(R.drawable.epiloges2_2_skulocookies);
                 } else {
-                    choise1.setBackgroundResource(R.drawable.epiloges0_megafwna_smartphone);
-                    choise2.setBackgroundResource(R.drawable.epiloges0_fulakas_smartphone);
-                    choise3.setBackgroundResource(R.drawable.epiloges0_fwnes_smartphone);
+                    choise1.setBackgroundResource(R.drawable.epiloges2_2_tourist_guide);
+                    choise2.setBackgroundResource(R.drawable.epiloges2_2_paidia);
+                    choise3.setBackgroundResource(R.drawable.epiloges2_2_skulocookies);
                 }
                 break;
         }

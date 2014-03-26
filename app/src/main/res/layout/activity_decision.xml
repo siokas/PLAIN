@@ -12,9 +12,8 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
         android:id="@+id/choise1"
-        android:background="@drawable/epiloges0_megafwna_smartphone"
+        android:background="@drawable/epiloges0_megafwno"
         android:layout_alignTop="@+id/choise3"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -24,7 +23,7 @@
         android:layout_height="wrap_content"
         android:text=""
         android:id="@+id/choise2"
-        android:background="@drawable/epiloges0_fulakas_smartphone"
+        android:background="@drawable/epiloges0_fulakas"
         android:layout_alignTop="@+id/choise1"
         android:layout_centerHorizontal="true" />
 
@@ -36,6 +35,6 @@
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:background="@drawable/epiloges0_fwnes_smartphone" />
+        android:background="@drawable/epiloges0_fwnes" />
 
 </RelativeLayout>

@@ -172,18 +172,30 @@ public class Map extends Activity {
     }
 
     void checkDatabase() {
-        if (getZoo().equals("ΙΕΡΑΞ"))
+        if (getZoo().equals("ΙΕΡΑΞ")){
             zoo.setText("ΙΕΡΑΞ");
-        if (getAlexandros().equals("ΣΑΡΙΣΑ"))
+            zoo.setEnabled(false);
+        }
+        if (getAlexandros().equals("ΣΑΡΙΣΑ")){
             alexandros.setText("ΣΑΡΙΣΑ");
-        if (getDimitrios().equals("ΝΑΟΣ"))
+            alexandros.setEnabled(false);
+        }
+        if (getDimitrios().equals("ΝΑΟΣ")){
             dimitrios.setText("ΝΑΟΣ");
-        if (getKastra().equals("ΗΛΙΟΣ"))
+            dimitrios.setEnabled(false);
+        }
+        if (getKastra().equals("ΗΛΙΟΣ")){
             kastra.setText("ΗΛΙΟΣ");
-        if (getLefkos().equals("ΟΡΙΖΩΝ"))
+            kastra.setEnabled(false);
+        }
+        if (getLefkos().equals("ΟΡΙΖΩΝ")){
             lefkos.setText("ΟΡΙΖΩΝ");
-        if (getRotonda().equals("ΣΤΡΟΓΓΥΛΗ"))
+            lefkos.setEnabled(false);
+        }
+        if (getRotonda().equals("ΣΤΡΟΓΓΥΛΗ")){
             rotonda.setText("ΣΤΡΟΓΓΥΛΗ");
+            rotonda.setEnabled(false);
+        }
     }
 
 

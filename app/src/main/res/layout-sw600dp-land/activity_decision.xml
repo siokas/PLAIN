@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:text=""
         android:id="@+id/choise1"
-        android:background="@drawable/epiloges0_megafwna"
+        android:background="@drawable/epiloges0_megafwno"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />

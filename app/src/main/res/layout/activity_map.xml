@@ -33,8 +33,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/dimitrios_bt"
         android:background="@drawable/button_smartphones"
-        android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/lefkos_bt" />
+        android:layout_alignBottom="@+id/key"
+        android:layout_toRightOf="@+id/key" />
 
     <Button
         android:layout_width="wrap_content"

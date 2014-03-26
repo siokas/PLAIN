@@ -78,6 +78,7 @@ public class Game extends Activity {
                     case 1: // If it is the first step do the following
                         mp.pause();
                         update(false); // Update the image
+                        playSound(getScore());
                         step--; // Decrease the step by one
                         break;
                     case 2: // If it is the SECOND step do the following
