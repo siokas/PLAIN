@@ -18,6 +18,7 @@ public class Decision extends ActionBarActivity {
     MediaPlayer mp;
     AlertDialog.Builder alert;
     String plainData = "0";
+    int imgNum = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,31 +52,34 @@ public class Decision extends ActionBarActivity {
             }
         });
 
+        imgNum = (getDecision()+1) * 10;
         choise1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                playSound(((getDecision()+1)*10)+1);
+                playSound(imgNum + 1);
                 plainData = "A";
                 alert.show();
+                System.out.println(imgNum + 1);
             }
         });
 
         choise2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                playSound(((getDecision()+1)*10)+1);
-                System.out.println(""+(((getDecision()+1)*10)+1));
+                playSound(imgNum + 2);
                 plainData = "B";
                 alert.show();
+                System.out.println(imgNum + 2);
             }
         });
 
         choise3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                playSound(((getDecision()+1)*10)+1);
+                playSound(imgNum + 3);
                 plainData = "C";
                 alert.show();
+                System.out.println(imgNum + 3);
             }
         });
     }
@@ -106,41 +110,40 @@ public class Decision extends ActionBarActivity {
 
         switch (x) {
             case 0:
-                choise1.setBackgroundResource(R.drawable.epiloges0_megafwno);
-                choise2.setBackgroundResource(R.drawable.epiloges0_fulakas);
-                choise3.setBackgroundResource(R.drawable.epiloges0_fwnes);
+                choise1.setBackgroundResource(R.drawable.epiloges0_megafwno_smartphone);
+                choise2.setBackgroundResource(R.drawable.epiloges0_fulakas_smartphone);
+                choise3.setBackgroundResource(R.drawable.epiloges0_fwnes_smartphone);
                 break;
 
             case 1:
-                choise1.setBackgroundResource(R.drawable.epiloges1_1_giagia);
-                choise2.setBackgroundResource(R.drawable.epiloges1_1_pateras_paidi);
-                choise3.setBackgroundResource(R.drawable.epiloges1_1_tileskopio);
+                choise1.setBackgroundResource(R.drawable.epiloges1_1_giagia_smartphone);
+                choise2.setBackgroundResource(R.drawable.epiloges1_1_pateras_paidi_smartphone);
+                choise3.setBackgroundResource(R.drawable.epiloges1_1_tileskopio_smartphone);
                 break;
 
             case 2:
-                choise1.setBackgroundResource(R.drawable.epiloges2_2_tourist_guide);
-                choise2.setBackgroundResource(R.drawable.epiloges2_2_paidia);
-                choise3.setBackgroundResource(R.drawable.epiloges2_2_skulocookies);
+                choise1.setBackgroundResource(R.drawable.epiloges2_2_tourist_guide_smartphone);
+                choise2.setBackgroundResource(R.drawable.epiloges2_2_paidia_smartphone);
+                choise3.setBackgroundResource(R.drawable.epiloges2_2_skulocookies_smartphone);
                 break;
 
             case 3:
-                choise1.setBackgroundResource(R.drawable.epiloges2_1_eisitiria);
-                choise2.setBackgroundResource(R.drawable.epiloges2_1_souvlatzis);
-                choise3.setBackgroundResource(R.drawable.epiloges2_1_astun_skulos);
+                choise1.setBackgroundResource(R.drawable.epiloges2_1_eisitiria_smartphone);
+                choise2.setBackgroundResource(R.drawable.epiloges2_1_souvlatzis_smartphone);
+                choise3.setBackgroundResource(R.drawable.epiloges2_1_astun_skulos_smartphone);
                 break;
 
             case 4:
-                choise1.setBackgroundResource(R.drawable.epiloges1_2_psaras);
-                choise2.setBackgroundResource(R.drawable.epiloges1_2_odigos);
-                choise3.setBackgroundResource(R.drawable.epiloges1_2_kualia);
+                choise1.setBackgroundResource(R.drawable.epiloges1_2_psaras_smartphone);
+                choise2.setBackgroundResource(R.drawable.epiloges1_2_odigos_smartphone);
+                choise3.setBackgroundResource(R.drawable.epiloges1_2_kualia_smartphone);
                 break;
 
             case 5:
-                choise1.setBackgroundResource(R.drawable.epiloges3_skatades);
-                choise2.setBackgroundResource(R.drawable.epiloges3_astunom);
-                choise3.setBackgroundResource(R.drawable.epiloges3_sfurixtra);
+                choise1.setBackgroundResource(R.drawable.epiloges3_skatades_smartphone);
+                choise2.setBackgroundResource(R.drawable.epiloges3_astunom_smartphone);
+                choise3.setBackgroundResource(R.drawable.epiloges3_sfurixtra_smartphone);
                 break;
-
 
         }
     }

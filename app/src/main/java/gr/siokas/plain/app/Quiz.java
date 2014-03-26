@@ -79,7 +79,12 @@ public class Quiz extends Activity {
 
         switch (x){
             case 1:
-                mp = MediaPlayer.create(this, R.raw.zoo_katharistis_eisagogiki_ataka);
+                if(rand == 1)
+                    mp = MediaPlayer.create(this, R.raw.zoo_pros_kastra_quiz_1);
+                if(rand == 2)
+                    mp = MediaPlayer.create(this, R.raw.zoo_pros_kastra_quiz_2);
+                if(rand == 3)
+                    mp = MediaPlayer.create(this, R.raw.zoo_pros_kastra_quiz_3);
                 break;
 
             case 2:

@@ -64,7 +64,7 @@
             android:screenOrientation="landscape" />
         <activity
             android:name="gr.siokas.plain.app.About"
-            android:label="@string/title_activity_about"></activity>
+            android:label="@string/title_activity_about" />
         <activity
             android:name="gr.siokas.plain.app.Noisis"
             android:configChanges="orientation|keyboardHidden"
@@ -73,17 +73,19 @@
         <activity
             android:name="gr.siokas.plain.app.AboutPlain"
             android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="landscape"
-            android:label="@string/title_activity_about_plain">
-
+            android:label="@string/title_activity_about_plain"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="gr.siokas.plain.app.AboutUs" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
-
         </activity>
+        <activity
+            android:name="gr.siokas.plain.app.WrongDecision"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="landscape"
+            android:label="@string/title_activity_wrong_decision"></activity>
     </application>
 
 </manifest>

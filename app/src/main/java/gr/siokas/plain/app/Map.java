@@ -114,10 +114,12 @@ public class Map extends Activity {
 
     void right() {
         startActivity(new Intent(Map.this, Game.class));
+        finish();
     }
 
     void wrong() {
-        startActivity(new Intent(Map.this, WrongMapDecision.class));
+        startActivity(new Intent(Map.this, WrongDecision.class));
+        finish();
     }
 
     void saveKeywords() {

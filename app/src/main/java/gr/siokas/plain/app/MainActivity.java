@@ -97,8 +97,8 @@ public class MainActivity extends ActionBarActivity {
 
 
         List<String> list = new ArrayList<String>();
-        list.add("Άρρεν");
-        list.add("Θήλι");
+        list.add("Αγόρι");
+        list.add("Κορίτσι");
 
 
         ArrayAdapter<String> dataAd = new ArrayAdapter<String>(this,
