@@ -62,32 +62,32 @@ public class Settings extends PreferenceActivity {
                 cor.commit();
 
                 SharedPreferences zooKey = getSharedPreferences("key_zoo", 0);
-                SharedPreferences.Editor zoo = correctKeys.edit();
+                SharedPreferences.Editor zoo = zooKey.edit();
                 zoo.putString("key_zoo", "0");
                 zoo.commit();
 
                 SharedPreferences rotondaKey = getSharedPreferences("key_rotonda", 0);
-                SharedPreferences.Editor rot = correctKeys.edit();
+                SharedPreferences.Editor rot = rotondaKey.edit();
                 rot.putString("key_rotonda", "0");
                 rot.commit();
 
                 SharedPreferences lefkosKey = getSharedPreferences("key_lefkos", 0);
-                SharedPreferences.Editor lefkos = correctKeys.edit();
+                SharedPreferences.Editor lefkos = lefkosKey.edit();
                 lefkos.putString("key_lefkos", "0");
                 lefkos.commit();
 
                 SharedPreferences kastraKey = getSharedPreferences("key_kastra", 0);
-                SharedPreferences.Editor kastra = correctKeys.edit();
+                SharedPreferences.Editor kastra = kastraKey.edit();
                 kastra.putString("key_kastra", "0");
                 kastra.commit();
 
                 SharedPreferences dimitriosKey = getSharedPreferences("key_dimitrios", 0);
-                SharedPreferences.Editor jim = correctKeys.edit();
+                SharedPreferences.Editor jim = dimitriosKey.edit();
                 jim.putString("key_dimitrios", "0");
                 jim.commit();
 
                 SharedPreferences alexKey = getSharedPreferences("key_alexandros", 0);
-                SharedPreferences.Editor alex = correctKeys.edit();
+                SharedPreferences.Editor alex = alexKey.edit();
                 alex.putString("key_alexandros", "0");
                 alex.commit();
 

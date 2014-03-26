@@ -24,19 +24,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/kastra_bt"
-        android:background="@drawable/button"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/rotonda_bt"
-        android:layout_marginLeft="106dp" />
+        android:background="@drawable/button_alla"
+        android:layout_alignTop="@+id/zoo_bt"
+        android:layout_toRightOf="@+id/rotonda_bt" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/dimitrios_bt"
-        android:background="@drawable/button"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/lefkos_bt"
-        android:layout_marginRight="56dp" />
+        android:background="@drawable/button_alla"
+        android:layout_alignTop="@+id/key"
+        android:layout_toLeftOf="@+id/rotonda_bt" />
 
     <Button
         android:layout_width="wrap_content"
@@ -71,4 +69,14 @@
         android:background="@drawable/button"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/noisis"
+        android:background="@drawable/button_alla"
+        android:layout_below="@+id/rotonda_bt"
+        android:layout_alignLeft="@+id/kastra_bt"
+        android:layout_alignStart="@+id/kastra_bt"
+        android:enabled="false" />
 </RelativeLayout>

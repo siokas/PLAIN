@@ -25,9 +25,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/kastra_bt"
         android:background="@drawable/button_smartphones"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/rotonda_bt"
-        android:layout_marginLeft="45dp" />
+        android:layout_alignBottom="@+id/dimitrios_bt"
+        android:layout_alignLeft="@+id/noisis"
+        android:layout_alignStart="@+id/noisis" />
 
     <Button
         android:layout_width="wrap_content"
@@ -69,4 +69,12 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/noisis"
+        android:background="@drawable/button_smartphones"
+        android:layout_alignTop="@+id/alex_bt"
+        android:layout_toRightOf="@+id/rotonda_bt" />
 </RelativeLayout>
