@@ -20,6 +20,7 @@ public class Map extends Activity {
     Dialog dialog;
     EditText zoo, lefkos, dimitrios, kastra, alexandros, rotonda;
     MediaPlayer mp;
+    boolean zooCount = false, lefkosCount = false, dimitriosCount = false, kastraCount = false, alexandrosCount = false, rotondaCount = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -142,7 +143,6 @@ public class Map extends Activity {
         rotonda.setEnabled(true);
 
         checkDatabase();
-        System.out.println(getCorrectKeys() + " correct");
 
         save.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -197,7 +197,7 @@ public class Map extends Activity {
     }
 
     void checkCorrectKeys() {
-        if (getCorrectKeys() >= 6) {
+        if (getCorrectKeys() >= 5) {
             playCorrectSound();
             changeBack(R.drawable.xartis_complete);
             noisis.setEnabled(true);
@@ -212,35 +212,62 @@ public class Map extends Activity {
     }
 
     void checkDatabase() {
+
         if (getZoo().equals("ΙΕΡΑΞ")) {
             zoo.setText("ΙΕΡΑΞ");
             zoo.setEnabled(false);
-            saveCorrectKeys((getCorrectKeys() + 1) + "");
+            if (!zooCount) {
+                saveCorrectKeys((getCorrectKeys() + 1) + "");
+                zooCount = true;
+            }
+
         }
+
         if (getAlexandros().equals("ΣΑΡΙΣΑ")) {
             alexandros.setText("ΣΑΡΙΣΑ");
             alexandros.setEnabled(false);
-            saveCorrectKeys((getCorrectKeys() + 1) + "");
+            if (!alexandrosCount) {
+                saveCorrectKeys((getCorrectKeys() + 1) + "");
+                alexandrosCount = true;
+            }
+
         }
         if (getDimitrios().equals("ΝΑΟΣ")) {
             dimitrios.setText("ΝΑΟΣ");
             dimitrios.setEnabled(false);
-            saveCorrectKeys((getCorrectKeys() + 1) + "");
+            if (!dimitriosCount) {
+                saveCorrectKeys((getCorrectKeys() + 1) + "");
+                dimitriosCount = true;
+            }
+
         }
+
         if (getKastra().equals("ΗΛΙΟΣ")) {
             kastra.setText("ΗΛΙΟΣ");
             kastra.setEnabled(false);
-            saveCorrectKeys((getCorrectKeys() + 1) + "");
+            if (!kastraCount) {
+                saveCorrectKeys((getCorrectKeys() + 1) + "");
+                kastraCount = true;
+            }
+
         }
         if (getLefkos().equals("ΟΡΙΖΩΝ")) {
             lefkos.setText("ΟΡΙΖΩΝ");
             lefkos.setEnabled(false);
-            saveCorrectKeys((getCorrectKeys() + 1) + "");
+            if (!lefkosCount) {
+                saveCorrectKeys((getCorrectKeys() + 1) + "");
+                lefkosCount = true;
+            }
         }
+
         if (getRotonda().equals("ΣΤΡΟΓΓΥΛΗ")) {
             rotonda.setText("ΣΤΡΟΓΓΥΛΗ");
             rotonda.setEnabled(false);
-            saveCorrectKeys((getCorrectKeys() + 1) + "");
+            if (rotondaCount) {
+                saveCorrectKeys((getCorrectKeys() + 1) + "");
+                rotondaCount = true;
+            }
+
         }
     }
 

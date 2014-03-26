@@ -53,13 +53,13 @@ public class Game extends Activity {
                     case 1: // If it is the first step do the following
                         mp.pause();
                         update(true); // Update the image
-                        playSound(getScore()+1);
+                        playSound(getScore() + 1);
                         step++; // Increase the step by one
                         break;
                     case 2: // Again if it is the second step do the following
                         mp.pause();
                         update(true); // Update the image
-                        playSound(getScore()+1);
+                        playSound(getScore() + 1);
                         step++; // Increase the step by one
                         break;
                     case 3: // Finally if it is the third step do the following
@@ -116,64 +116,6 @@ public class Game extends Activity {
                 finish();
             } else changeImg();
         } else {
-            /*
-            if (getScore() > 3) {
-
-                Monument monument = new Monument("a,d,l,r,k");
-                saveMonument(monument.getRandomMonument());
-
-                allMonuments = getMonuments();
-                String next = allMonuments;
-
-                if (next.equals("a")) {
-                    img4 = R.drawable.sketch4;
-                    img5 = R.drawable.sketch5;
-                    img6 = R.drawable.sketch6;
-                } else if (next.equals("d")) {
-                    img4 = R.drawable.sketch7;
-                    img5 = R.drawable.sketch8;
-                    img6 = R.drawable.sketch9;
-                } else if (next.equals("l")) {
-                    img4 = R.drawable.sketch10;
-                    img5 = R.drawable.sketch11;
-                    img6 = R.drawable.sketch12;
-                } else if (next.equals("r")) {
-                    img4 = R.drawable.sketch13;
-                    img5 = R.drawable.sketch14;
-                    img6 = R.drawable.sketch15;
-                } else if (next.equals("k")) {
-                    img4 = R.drawable.sketch16;
-                    img5 = R.drawable.sketch17;
-                    img6 = R.drawable.sketch18;
-                }
-            } else if (getScore() > 6) {
-                allMonuments = getMonuments();
-                String nextMon = allMonuments;
-
-
-                if (next.equals("a")) {
-                    img7 = R.drawable.sketch4;
-                    img8 = R.drawable.sketch5;
-                    img9 = R.drawable.sketch6;
-                } else if (next.equals("d")) {
-                    img7 = R.drawable.sketch7;
-                    img8 = R.drawable.sketch8;
-                    img9 = R.drawable.sketch9;
-                } else if (next.equals("l")) {
-                    img7 = R.drawable.sketch10;
-                    img8 = R.drawable.sketch11;
-                    img9 = R.drawable.sketch12;
-                } else if (next.equals("r")) {
-                    img7 = R.drawable.sketch13;
-                    img8 = R.drawable.sketch14;
-                    img9 = R.drawable.sketch15;
-                } else if (next.equals("k")) {
-                    img7 = R.drawable.sketch16;
-                    img8 = R.drawable.sketch17;
-                    img9 = R.drawable.sketch18;
-                }
-            }
-            */
             changeImg();
         }
 
@@ -211,34 +153,11 @@ public class Game extends Activity {
         if (getScore() == 14)
             changeBack(R.drawable.sketch15); // Change the source of the image
         if (getScore() == 15)
-            changeBack(R.drawable.sketch15); // Change the source of the image
-
-
-        /*
-        if (getScore() == 3)
-            changeBack(img4); // Change the source of the image
-        if (getScore() == 4)
-            changeBack(img5); // Change the source of the image
-        if (getScore() == 5)
-            changeBack(img6); // Change the source of the image
-        if (getScore() == 6)
-            changeBack(img7); // Change the source of the image
-        if (getScore() == 7)
-            changeBack(img8); // Change the source of the image
-        if (getScore() == 8)
-            changeBack(img9); // Change the source of the image
-        if (getScore() == 9)
-            changeBack(img10); // Change the source of the image
-        if (getScore() == 10)
-            changeBack(img11); // Change the source of the image
-        if (getScore() == 11)
-            changeBack(img12); // Change the source of the image
-        if (getScore() == 12)
-            changeBack(img13); // Change the source of the image
-        if (getScore() == 13)
-            changeBack(img14); // Change the source of the image
-
-            */
+            changeBack(R.drawable.sketch16); // Change the source of the image
+        if (getScore() == 16)
+            changeBack(R.drawable.sketch17); // Change the source of the image
+        if (getScore() == 17)
+            changeBack(R.drawable.sketch18); // Change the source of the image
     }
 
     void playSound(int x) {
