@@ -338,7 +338,7 @@ public class Map extends Activity {
     }
 
     void changeBack(int img) {
-        RelativeLayout layout = (RelativeLayout) findViewById(R.id.game_layout);
+        RelativeLayout layout = (RelativeLayout) findViewById(R.id.map_layout);
         layout.setBackgroundResource(img);
     }
 }

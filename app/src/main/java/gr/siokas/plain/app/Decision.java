@@ -52,7 +52,7 @@ public class Decision extends ActionBarActivity {
         choise1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                playSound((getDecision()*10)+1);
+                playSound(((getDecision()+1)*10)+1);
                 plainData = "A";
                 alert.show();
             }
@@ -61,7 +61,8 @@ public class Decision extends ActionBarActivity {
         choise2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                playSound((getDecision()*10)+2);
+                playSound(((getDecision()+1)*10)+1);
+                System.out.println(""+(((getDecision()+1)*10)+1));
                 plainData = "B";
                 alert.show();
             }
@@ -70,7 +71,7 @@ public class Decision extends ActionBarActivity {
         choise3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                playSound((getDecision()*10)+3);
+                playSound(((getDecision()+1)*10)+1);
                 plainData = "C";
                 alert.show();
             }
@@ -177,6 +178,24 @@ public class Decision extends ActionBarActivity {
             mp = MediaPlayer.create(this, R.raw.lefkos_epilogi_2_odigos_leoforeiou);
 
         if (x == 43)
+            mp = MediaPlayer.create(this, R.raw.lefkos_epilogi_3_kualia);
+
+        if (x == 51)
+            mp = MediaPlayer.create(this, R.raw.lefkos_epilogi_3_kualia);
+
+        if (x == 52)
+            mp = MediaPlayer.create(this, R.raw.lefkos_epilogi_3_kualia);
+
+        if (x == 53)
+            mp = MediaPlayer.create(this, R.raw.lefkos_epilogi_3_kualia);
+
+        if (x == 61)
+            mp = MediaPlayer.create(this, R.raw.lefkos_epilogi_3_kualia);
+
+        if (x == 62)
+            mp = MediaPlayer.create(this, R.raw.lefkos_epilogi_3_kualia);
+
+        if (x == 63)
             mp = MediaPlayer.create(this, R.raw.lefkos_epilogi_3_kualia);
 
 

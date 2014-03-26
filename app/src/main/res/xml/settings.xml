@@ -1,59 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory android:title="Game Settings">
-        <EditTextPreference
-            android:key="name"
-            android:title="Όνομα"
-            android:defaultValue=""></EditTextPreference>
-        <EditTextPreference
-            android:key="age"
-            android:title="Ηλικία"
-            android:defaultValue="0"></EditTextPreference>
-    </PreferenceCategory>
-
 
     <PreferenceCategory android:title="Game Settings">
 
         <PreferenceScreen
             android:key="button_game"
             android:persistent="false"
-            android:title="Game Progress">
+            android:title="Παιχνίδι">
 
-            <Preference
-                android:key="load"
-                android:summary="Load Game"
-                android:title="Restore Progress"></Preference>
 
             <Preference
                 android:key="reset"
                 android:summary="Reset Progress"
-                android:title="Start Over"></Preference>
+                android:title="Ξεκίνημα από την αρχή"></Preference>
 
 
         </PreferenceScreen>
-
-        <EditTextPreference
-            android:key="sound"
-            android:summary="Sound"
-            android:title="Sound"></EditTextPreference>
-
-
-        <ListPreference
-            android:entries="@array/langList"
-            android:entryValues="@array/langVal"
-            android:key="lang"
-            android:summary="Select Language"
-            android:title="Language"></ListPreference>
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="About">
+    <PreferenceCategory android:title="Σχετικά">
         <PreferenceScreen
             android:key="button_help"
             android:persistent="false"
-            android:title="Help">
+            android:title="Βοήθεια">
             <Preference
-                android:summary="How to play the game"
+                android:summary="Οδηγείες Παιχνιδιού"
                 android:title="PLAIN Game">
                 <intent android:action="gr.siokas.plain.app.Help" />
             </Preference>
@@ -62,11 +34,11 @@
         <PreferenceScreen
             android:key="button_about"
             android:persistent="false"
-            android:title="About Us">
+            android:title="Σχετικά">
 
             <Preference
-                android:summary="PLAIN Team"
-                android:title="About Us">
+                android:summary="Ομάδα PLAIN"
+                android:title="Σχετικά με την ομάδα">
                 <intent android:action="gr.siokas.plain.app.AboutUs" />
             </Preference>
 

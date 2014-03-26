@@ -35,23 +35,28 @@ public class Quiz extends ActionBarActivity {
                 break;
 
             case 1:
-                img.setImageResource(R.drawable.maintanos_koritsi);
+                img.setImageResource(R.drawable.maintanos_touristas);
                 playSound(2);
                 break;
 
             case 2:
-                img.setImageResource(R.drawable.maintanos_koulourtzis);
+                img.setImageResource(R.drawable.maintanos_koritsi);
                 playSound(3);
                 break;
 
             case 3:
-                img.setImageResource(R.drawable.maintanos_podilatis);
+                img.setImageResource(R.drawable.maintanos_koulourtzis);
                 playSound(4);
                 break;
 
             case 4:
-                img.setImageResource(R.drawable.maintanos_jogging);
+                img.setImageResource(R.drawable.maintanos_podilatis);
                 playSound(5);
+                break;
+
+            case 5:
+                img.setImageResource(R.drawable.maintanos_jogging);
+                playSound(6);
                 break;
 
         }
@@ -109,6 +114,15 @@ public class Quiz extends ActionBarActivity {
                     mp = MediaPlayer.create(this, R.raw.lefkos_pros_alexandro_quizz_2);
                 if(rand == 3)
                     mp = MediaPlayer.create(this, R.raw.lefkos_pros_alexandro_quizz_3);
+                break;
+
+            case 6:
+                if(rand == 1)
+                    mp = MediaPlayer.create(this, R.raw.correct);
+                if(rand == 2)
+                    mp = MediaPlayer.create(this, R.raw.correct);
+                if(rand == 3)
+                    mp = MediaPlayer.create(this, R.raw.correct);
                 break;
         }
 
