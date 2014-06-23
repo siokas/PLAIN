@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="gr.siokas.plain.app">
+    package="gr.siokas.plain.app" >
 
     <uses-sdk
         android:minSdkVersion="11"
@@ -10,12 +10,12 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
         <activity
             android:name="gr.siokas.plain.app.MainActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name"
-            android:screenOrientation="landscape">
+            android:screenOrientation="landscape" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -74,7 +74,7 @@
             android:name="gr.siokas.plain.app.AboutPlain"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/title_activity_about_plain"
-            android:screenOrientation="landscape">
+            android:screenOrientation="landscape" >
             <intent-filter>
                 <action android:name="gr.siokas.plain.app.AboutUs" />
 
@@ -84,8 +84,9 @@
         <activity
             android:name="gr.siokas.plain.app.WrongDecision"
             android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="landscape"
-            android:label="@string/title_activity_wrong_decision"></activity>
+            android:label="@string/title_activity_wrong_decision"
+            android:screenOrientation="landscape" />
+
     </application>
 
 </manifest>

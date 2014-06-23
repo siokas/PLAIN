@@ -82,7 +82,7 @@ public class Quiz extends Activity {
                 if(rand == 1)
                     mp = MediaPlayer.create(this, R.raw.zoo_pros_kastra_quiz_1);
                 if(rand == 2)
-                    mp = MediaPlayer.create(this, R.raw.zoo_pros_kastra_quiz_2);
+                    mp = MediaPlayer.create(this, R.raw.zoo_pros_kastra_quiz_1); // Difficult for kids ( Oxirosi )
                 if(rand == 3)
                     mp = MediaPlayer.create(this, R.raw.zoo_pros_kastra_quiz_3);
                 break;
@@ -109,7 +109,7 @@ public class Quiz extends Activity {
                 if(rand == 1)
                     mp = MediaPlayer.create(this, R.raw.rotonda_pros_lefko_quiz_1);
                 if(rand == 2)
-                    mp = MediaPlayer.create(this, R.raw.rotonda_pros_lefko_quiz_2);
+                    mp = MediaPlayer.create(this, R.raw.rotonda_pros_lefko_quiz_1); // Difficult for kids ( Oxirosi )
                 if(rand == 3)
                     mp = MediaPlayer.create(this, R.raw.rotonda_pros_lefko_quiz_3);
                 break;

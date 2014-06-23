@@ -91,7 +91,7 @@ public class Settings extends PreferenceActivity {
                 alex.putString("key_alexandros", "0");
                 alex.commit();
 
-                Toast.makeText(Settings.this, "Game Just Reseted!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Settings.this, "Η Επαναφορά Ολοκληρώθηκε!", Toast.LENGTH_SHORT).show();
                 return true;
             }
         });

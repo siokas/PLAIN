@@ -26,4 +26,14 @@
         android:layout_centerHorizontal="true"
         android:src="@drawable/maintanos_brad" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/sound"
+        android:background="@drawable/sound"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/maintanos"
+        android:layout_alignEnd="@+id/maintanos" />
+
 </RelativeLayout>

@@ -15,12 +15,11 @@ import android.widget.RelativeLayout;
 public class Game extends Activity {
 
     // Declare the variables
-    Button next, previous;
+    Button next, previous, laser;
     ImageView image;
     int step = 1;
     MediaPlayer mp;
-    //String allMonuments = "";
-    //int img4 = 0, img5 = 0, img6 = 0, img7 = 0, img8 = 0, img9 = 0, img10 = 0, img11 = 0, img12 = 0, img13 = 0, img14 = 0, img15 = 0;
+    boolean laserON = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +30,15 @@ public class Game extends Activity {
         // Associate the variables with the corresponding id's
         next = (Button) findViewById(R.id.next);
         previous = (Button) findViewById(R.id.previous);
+        laser = (Button) findViewById(R.id.laser);
         image = (ImageView) findViewById(R.id.image);
 
 
-        playSound(1);
-        changeImg();
+
+        if(getScore()!=0){
+            changeImg(getScore()+1);
+        }
+        playSound(getScore() + 1);
 
         if (getScore() == 0 || getScore() == 3 || getScore() == 6 || getScore() == 9 || getScore() == 12 || getScore() == 15 || getScore() == 18) {
             previous.setVisibility(View.INVISIBLE); // Set the 'previous' button to be invisible
@@ -43,6 +46,20 @@ public class Game extends Activity {
             previous.setVisibility(View.VISIBLE); // Set the 'previous' button to be visible
             update(true);
         }
+
+        // Call this method if the 'laser' button is pressed
+        laser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(laserON){
+                    changeImg(getScore() +1);
+                    laserON = false;
+                }else{
+                    laserImg(getScore() +1);
+                    laserON = true;
+                }
+            }
+        });
 
 
         // Call this method if the 'next' button is pressed
@@ -54,13 +71,13 @@ public class Game extends Activity {
                     case 1: // If it is the first step do the following
                         mp.pause();
                         update(true); // Update the image
-                        playSound(getScore() + 1);
+                        playSound(getScore() + 1); // Play the correct sound
                         step++; // Increase the step by one
                         break;
                     case 2: // Again if it is the second step do the following
                         mp.pause();
                         update(true); // Update the image
-                        playSound(getScore() + 1);
+                        playSound(getScore() + 1);// Play the correct sound
                         step++; // Increase the step by one
                         break;
                     case 3: // Finally if it is the third step do the following
@@ -76,22 +93,16 @@ public class Game extends Activity {
             @Override
             public void onClick(View v) {
                 switch (step) {
-                    case 1: // If it is the first step do the following
+                    case 2: // If it is the first step do the following
                         mp.pause();
-                        update(false); // Update the image
                         playSound(getScore());
+                        update(false); // Update the image
                         step--; // Decrease the step by one
                         break;
-                    case 2: // If it is the SECOND step do the following
+                    case 3: // If it is the SECOND step do the following
                         mp.pause();
-                        update(false); // Update the image
                         playSound(getScore());
-                        step--; // Decrease the step by one
-                        break;
-                    case 3: // If it is the THIRD step do the following
-                        mp.pause();
                         update(false); // Update the image
-                        playSound(getScore());
                         step--; // Decrease the step by one
                         break;
 
@@ -105,6 +116,11 @@ public class Game extends Activity {
         if (x) saveScore((getScore() + 1) + ""); // At first increase or decrease the score value
         else saveScore((getScore() - 1) + "");
 
+        if(getScore()==2){
+            laser.setVisibility(View.INVISIBLE);
+        }else {
+            laser.setVisibility(View.VISIBLE);
+        }
 
         if (getScore() == 0 || getScore() == 3 || getScore() == 6 || getScore() == 9 || getScore() == 12 || getScore() == 15 || getScore() == 18)
             previous.setVisibility(View.INVISIBLE); // Set the 'previous' button to be visible
@@ -115,49 +131,88 @@ public class Game extends Activity {
             if (x) {
                 startActivity(new Intent(Game.this, Decision.class)); // Start the Decision Activity
                 finish();
-            } else changeImg();
+            } else changeImg(getScore()+1);
         } else {
-            changeImg();
+            changeImg(getScore()+1);
         }
 
     }
 
-    void changeImg() {
-        if (getScore() == 0)
+    void laserImg(int x) {
+        if (x == 1)
+            changeBack(R.drawable.sketch1_lz); // Change the source of the image
+        if (x == 2)
+            changeBack(R.drawable.sketch2_lz); // Change the source of the image
+        if (x == 3)
+            changeBack(R.drawable.sketch3_lz); // Change the source of the image
+        if (x == 4)
+            changeBack(R.drawable.sketch4_lz); // Change the source of the image
+        if (x == 5)
+            changeBack(R.drawable.sketch5_lz); // Change the source of the image
+        if (x == 6)
+            changeBack(R.drawable.sketch6_lz); // Change the source of the image
+        if (x == 7)
+            changeBack(R.drawable.sketch7_lz); // Change the source of the image
+        if (x == 8)
+            changeBack(R.drawable.sketch8_lz); // Change the source of the image
+        if (x == 9)
+            changeBack(R.drawable.sketch9_lz); // Change the source of the image
+        if (x == 10)
+            changeBack(R.drawable.sketch10_lz); // Change the source of the image
+        if (x == 11)
+            changeBack(R.drawable.sketch11_lz); // Change the source of the image
+        if (x == 12)
+            changeBack(R.drawable.sketch12_lz); // Change the source of the image
+        if (x == 13)
+            changeBack(R.drawable.sketch13_lz); // Change the source of the image
+        if (x == 14)
+            changeBack(R.drawable.sketch14_lz); // Change the source of the image
+        if (x == 15)
+            changeBack(R.drawable.sketch15_lz); // Change the source of the image
+        if (x == 16)
+            changeBack(R.drawable.sketch16_lz); // Change the source of the image
+        if (x == 17)
+            changeBack(R.drawable.sketch17_lz); // Change the source of the image
+        if (x == 18)
+            changeBack(R.drawable.sketch18_lz); // Change the source of the image
+    }
+
+    void changeImg(int x) {
+        if (x == 1)
             changeBack(R.drawable.sketch1); // Change the source of the image
-        if (getScore() == 1)
+        if (x == 2)
             changeBack(R.drawable.sketch2); // Change the source of the image
-        if (getScore() == 2)
+        if (x == 3)
             changeBack(R.drawable.sketch3); // Change the source of the image
-        if (getScore() == 3)
+        if (x == 4)
             changeBack(R.drawable.sketch4); // Change the source of the image
-        if (getScore() == 4)
+        if (x == 5)
             changeBack(R.drawable.sketch5); // Change the source of the image
-        if (getScore() == 5)
+        if (x == 6)
             changeBack(R.drawable.sketch6); // Change the source of the image
-        if (getScore() == 6)
+        if (x == 7)
             changeBack(R.drawable.sketch7); // Change the source of the image
-        if (getScore() == 7)
+        if (x == 8)
             changeBack(R.drawable.sketch8); // Change the source of the image
-        if (getScore() == 8)
+        if (x == 9)
             changeBack(R.drawable.sketch9); // Change the source of the image
-        if (getScore() == 9)
+        if (x == 10)
             changeBack(R.drawable.sketch10); // Change the source of the image
-        if (getScore() == 10)
+        if (x == 11)
             changeBack(R.drawable.sketch11); // Change the source of the image
-        if (getScore() == 11)
+        if (x == 12)
             changeBack(R.drawable.sketch12); // Change the source of the image
-        if (getScore() == 12)
+        if (x == 13)
             changeBack(R.drawable.sketch13); // Change the source of the image
-        if (getScore() == 13)
+        if (x == 14)
             changeBack(R.drawable.sketch14); // Change the source of the image
-        if (getScore() == 14)
+        if (x == 15)
             changeBack(R.drawable.sketch15); // Change the source of the image
-        if (getScore() == 15)
+        if (x == 16)
             changeBack(R.drawable.sketch16); // Change the source of the image
-        if (getScore() == 16)
+        if (x == 17)
             changeBack(R.drawable.sketch17); // Change the source of the image
-        if (getScore() == 17)
+        if (x == 18)
             changeBack(R.drawable.sketch18); // Change the source of the image
     }
 
@@ -263,15 +318,20 @@ public class Game extends Activity {
             finish();
             return true;
         }
+
         return super.onKeyDown(keyCode, event);
     }
+
+
 
     // Call this method if the back button is pressed (for higher apis)
     @Override
     public void onBackPressed() {
+        mp.stop();
         startActivity(new Intent(Game.this, MainActivity.class));
         finish();
     }
+
 
 
 }

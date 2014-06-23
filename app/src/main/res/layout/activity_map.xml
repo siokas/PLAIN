@@ -77,4 +77,14 @@
         android:background="@drawable/button_smartphones"
         android:layout_alignTop="@+id/alex_bt"
         android:layout_toRightOf="@+id/rotonda_bt" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mapSound"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/sound"
+        android:layout_below="@+id/rotonda_bt"
+        android:layout_toLeftOf="@+id/lefkos_bt" />
+
 </RelativeLayout>

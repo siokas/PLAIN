@@ -1,16 +1,19 @@
 package gr.siokas.plain.app;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Message;
 import android.view.KeyEvent;
-import android.widget.Toast;
 
 
 public class Noisis extends Activity {
 
     MediaPlayer mp;
+    protected static final Message BUTTON_NEUTRAL = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,8 +22,13 @@ public class Noisis extends Activity {
         mp = MediaPlayer.create(this, R.raw.correct);
         mp.start();
 
-        Toast.makeText(Noisis.this, "Συγχαρητήρια! Το βρήκες! Ο Άργος κρύβεται στο Μουσίο Τεχνολογίας 'Νόησις' ", Toast.LENGTH_LONG).show();
-
+        AlertDialog alert = new AlertDialog.Builder(this).create();
+        alert.setTitle("Συγχαρητήρια!");
+        alert.setMessage("Βρήκατε την κρυψώνα του Άργου, στο μουσίο τεχνολογίας ΝΟΗΣΙΣ. Παραδώστε σε ένα χαρτί" +
+                "τις λέξεις κλειδιά μαζί με το όνομά σας στην υποδοχή, για να πάραλάβετε" +
+                "την αναμνηστική κονκάρδα νικητή!");
+        alert.setButton("Επιστροφή", BUTTON_NEUTRAL);
+        alert.show();
 
     }
 

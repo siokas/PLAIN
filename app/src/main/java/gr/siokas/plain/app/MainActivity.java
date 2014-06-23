@@ -26,7 +26,7 @@ public class MainActivity extends ActionBarActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -70,10 +70,36 @@ public class MainActivity extends ActionBarActivity {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (getScore() == 0)
+
+                String name = getName();
+
+
+
+                if (getScore() == 0) {
+                    wipeData_player1();
                     showNameInput();
-                else
-                    startActivity(new Intent(MainActivity.this, Game.class));
+                }
+                else {
+                    AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+                    alert.setTitle("Επιλογή");
+                    alert.setMessage("Γειά σου -" + name + "-. Θα ήθελες να συνεχίσεις ή να ξεκινήσεις νέο παιχνίδι;");
+                    alert.setPositiveButton("Συνεχεια Παιχνιδιού", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent intent = new Intent(MainActivity.this, Game.class);
+                            intent.putExtra("score", "0");
+                            startActivity(intent);
+                        }
+                    });
+                    alert.setNeutralButton("Νέο Παιχνίδι", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            showNameInput();
+                        }
+                    });
+
+                    alert.show();
+                }
             }
         });
 
@@ -156,6 +182,20 @@ public class MainActivity extends ActionBarActivity {
         return (Integer.parseInt(theScore));
     }
 
+    String getName(){
+        SharedPreferences settings = getSharedPreferences("name", 0);
+        final String theName = settings.getString("name", "0");
+        return theName;
+    }
+
+    // Call this method to save score
+    void saveScore(String x) {
+        SharedPreferences settings = getSharedPreferences("score", 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("score", x);
+        editor.commit();
+    }
+
     void saveName(String x) {
         SharedPreferences settings = getSharedPreferences("name", 0);
         SharedPreferences.Editor editor = settings.edit();
@@ -175,6 +215,84 @@ public class MainActivity extends ActionBarActivity {
         SharedPreferences.Editor editor = settings.edit();
         editor.putString("sex", x);
         editor.commit();
+    }
+
+    void wipeData_player1(){
+
+        SharedPreferences namesettings = getSharedPreferences("score", 0);
+        SharedPreferences.Editor name = namesettings.edit();
+        name.putString("score", "0");
+        name.commit();
+
+        SharedPreferences agesettings = getSharedPreferences("score", 0);
+        SharedPreferences.Editor age = agesettings.edit();
+        age.putString("score", "0");
+        age.commit();
+
+        SharedPreferences sexsettings = getSharedPreferences("score", 0);
+        SharedPreferences.Editor sex = sexsettings.edit();
+        sex.putString("score", "0");
+        sex.commit();
+
+        SharedPreferences settings = getSharedPreferences("score", 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("score", "0");
+        editor.commit();
+
+        SharedPreferences mist = getSharedPreferences("mistake", 0);
+        SharedPreferences.Editor m = mist.edit();
+        m.putString("mistake", "0");
+        m.commit();
+
+        SharedPreferences quiz = getSharedPreferences("quiz", 0);
+        SharedPreferences.Editor q = quiz.edit();
+        q.putString("quiz", "0");
+        q.commit();
+
+        SharedPreferences decision = getSharedPreferences("decision", 0);
+        SharedPreferences.Editor d = decision.edit();
+        d.putString("decision", "0");
+        d.commit();
+
+        SharedPreferences plaindata = getSharedPreferences("plaindata", 0);
+        SharedPreferences.Editor p = plaindata.edit();
+        p.putString("plaindata", "0");
+        p.commit();
+
+        SharedPreferences correctKeys = getSharedPreferences("correctKeys", 0);
+        SharedPreferences.Editor cor = correctKeys.edit();
+        cor.putString("correctKeys", "0");
+        cor.commit();
+
+        SharedPreferences zooKey = getSharedPreferences("key_zoo", 0);
+        SharedPreferences.Editor zoo = zooKey.edit();
+        zoo.putString("key_zoo", "0");
+        zoo.commit();
+
+        SharedPreferences rotondaKey = getSharedPreferences("key_rotonda", 0);
+        SharedPreferences.Editor rot = rotondaKey.edit();
+        rot.putString("key_rotonda", "0");
+        rot.commit();
+
+        SharedPreferences lefkosKey = getSharedPreferences("key_lefkos", 0);
+        SharedPreferences.Editor lefkos = lefkosKey.edit();
+        lefkos.putString("key_lefkos", "0");
+        lefkos.commit();
+
+        SharedPreferences kastraKey = getSharedPreferences("key_kastra", 0);
+        SharedPreferences.Editor kastra = kastraKey.edit();
+        kastra.putString("key_kastra", "0");
+        kastra.commit();
+
+        SharedPreferences dimitriosKey = getSharedPreferences("key_dimitrios", 0);
+        SharedPreferences.Editor jim = dimitriosKey.edit();
+        jim.putString("key_dimitrios", "0");
+        jim.commit();
+
+        SharedPreferences alexKey = getSharedPreferences("key_alexandros", 0);
+        SharedPreferences.Editor alex = alexKey.edit();
+        alex.putString("key_alexandros", "0");
+        alex.commit();
     }
 
 
