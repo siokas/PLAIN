@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/Users/apostolossiokas/Documents/Github/PLAIN/app/src/main/res/values-sw600dp-land/layouts -->
+    <eat-comment />
+
+    <bool name="isTablet">true</bool>
+
+</resources>

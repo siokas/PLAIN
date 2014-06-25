@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <PreferenceCategory android:title="Game Settings">
+
+        <PreferenceScreen
+            android:key="button_game"
+            android:persistent="false"
+            android:title="Παιχνίδι">
+
+
+            <Preference
+                android:key="reset"
+                android:summary="Reset Progress"
+                android:title="Ξεκίνημα από την αρχή"></Preference>
+
+
+        </PreferenceScreen>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Σχετικά">
+        <PreferenceScreen
+            android:key="button_help"
+            android:persistent="false"
+            android:title="Βοήθεια">
+            <Preference
+                android:summary="Οδηγείες Παιχνιδιού"
+                android:title="PLAIN Game">
+                <intent android:action="gr.siokas.plain.app.Help" />
+            </Preference>
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:key="button_about"
+            android:persistent="false"
+            android:title="Σχετικά">
+
+            <Preference
+                android:summary="Ομάδα PLAIN"
+                android:title="Σχετικά με την ομάδα">
+                <intent android:action="gr.siokas.plain.app.AboutUs" />
+            </Preference>
+
+        </PreferenceScreen>
+
+
+    </PreferenceCategory>
+    <PreferenceScreen
+        android:key="version"
+        android:persistent="false"
+        android:enabled="false"
+        android:title="App Version"
+        android:summary="1.0">
+
+        <!-- Player 1 -->
+        <EditTextPreference
+            android:key="score"
+            android:title="score"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="decision"
+            android:title="decision"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="plaindata"
+            android:title="plaindata"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="quiz"
+            android:title="quiz"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="mistake"
+            android:title="mistake"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="age"
+            android:title="age"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="name"
+            android:title="name"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="sex"
+            android:title="sex"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="key_zoo"
+            android:title="key_zoo"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="key_rotonda"
+            android:title="key_rotonda"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="key_lefkos"
+            android:title="key_lefkos"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="key_kastra"
+            android:title="key_kastra"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="key_dimitrios"
+            android:title="key_dimitrios"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="key_alexandros"
+            android:title="key_alexandros"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="monuments"
+            android:title="monuments"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="correctKeys"
+            android:title="correctKeys"
+            android:defaultValue="0"></EditTextPreference>
+
+        <!-- Player 2 -->
+        <EditTextPreference
+            android:key="score2"
+            android:title="score2"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="decision2"
+            android:title="decision2"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="plaindata2"
+            android:title="plaindata2"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="quiz2"
+            android:title="quiz2"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="mistake2"
+            android:title="mistake2"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="age2"
+            android:title="age2"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="name2"
+            android:title="name2"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="sex2"
+            android:title="sex2"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="key_zoo2"
+            android:title="key_zoo2"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="key_rotonda2"
+            android:title="key_rotonda2"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="key_lefkos2"
+            android:title="key_lefkos2"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="key_kastra2"
+            android:title="key_kastra2"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="key_dimitrios2"
+            android:title="key_dimitrios2"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="key_alexandros2"
+            android:title="key_alexandros2"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="monuments2"
+            android:title="monuments2"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="correctKeys2"
+            android:title="correctKeys2"
+            android:defaultValue="0"></EditTextPreference>
+
+        <!-- Player 3 -->
+        <EditTextPreference
+            android:key="score3"
+            android:title="score3"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="decision3"
+            android:title="decision3"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="plaindata3"
+            android:title="plaindata3"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="quiz3"
+            android:title="quiz3"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="mistake3"
+            android:title="mistake3"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="age3"
+            android:title="age3"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="name3"
+            android:title="name3"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="sex3"
+            android:title="sex3"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="key_zoo3"
+            android:title="key_zoo3"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="key_rotonda3"
+            android:title="key_rotonda3"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="key_lefkos3"
+            android:title="key_lefkos3"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="key_kastra3"
+            android:title="key_kastra3"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="key_dimitrios3"
+            android:title="key_dimitrios3"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="key_alexandros3"
+            android:title="key_alexandros3"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="monuments3"
+            android:title="monuments3"
+            android:defaultValue="0"></EditTextPreference>
+        <EditTextPreference
+            android:key="correctKeys3"
+            android:title="correctKeys3"
+            android:defaultValue="0"></EditTextPreference>
+
+
+    </PreferenceScreen>
+
+
+</PreferenceScreen><!-- From: file:/Users/apostolossiokas/Documents/Github/PLAIN/app/src/main/res/xml/settings.xml -->
