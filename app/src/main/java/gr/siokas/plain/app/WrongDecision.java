@@ -15,11 +15,14 @@ public class WrongDecision extends ActionBarActivity {
 
     Button back, backToMap;
     MediaPlayer mp;
+    int backg=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wrong_decision);
+        Intent intent  = getIntent();
+        backg = intent.getIntExtra("mon",1);
 
         back = (Button) findViewById(R.id.wrongBack);
         backToMap = (Button) findViewById(R.id.backToMap);
@@ -32,6 +35,7 @@ public class WrongDecision extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(WrongDecision.this, Map.class));
+                mp.stop();
             }
         });
 
@@ -39,6 +43,7 @@ public class WrongDecision extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(WrongDecision.this, WrongMapDecision.class));
+                mp.stop();
             }
         });
 
@@ -46,42 +51,18 @@ public class WrongDecision extends ActionBarActivity {
     }
 
     void changeImg() {
-        if (getScore() == 0)
-            changeBack(R.drawable.sketch1); // Change the source of the image
-        if (getScore() == 1)
-            changeBack(R.drawable.sketch2); // Change the source of the image
-        if (getScore() == 2)
-            changeBack(R.drawable.sketch3); // Change the source of the image
-        if (getScore() == 3)
-            changeBack(R.drawable.sketch4); // Change the source of the image
-        if (getScore() == 4)
-            changeBack(R.drawable.sketch5); // Change the source of the image
-        if (getScore() == 5)
-            changeBack(R.drawable.sketch6); // Change the source of the image
-        if (getScore() == 6)
-            changeBack(R.drawable.sketch7); // Change the source of the image
-        if (getScore() == 7)
-            changeBack(R.drawable.sketch8); // Change the source of the image
-        if (getScore() == 8)
-            changeBack(R.drawable.sketch9); // Change the source of the image
-        if (getScore() == 9)
-            changeBack(R.drawable.sketch10); // Change the source of the image
-        if (getScore() == 10)
-            changeBack(R.drawable.sketch11); // Change the source of the image
-        if (getScore() == 11)
-            changeBack(R.drawable.sketch12); // Change the source of the image
-        if (getScore() == 12)
-            changeBack(R.drawable.sketch13); // Change the source of the image
-        if (getScore() == 13)
-            changeBack(R.drawable.sketch14); // Change the source of the image
-        if (getScore() == 14)
-            changeBack(R.drawable.sketch15); // Change the source of the image
-        if (getScore() == 15)
-            changeBack(R.drawable.sketch16); // Change the source of the image
-        if (getScore() == 16)
-            changeBack(R.drawable.sketch17); // Change the source of the image
-        if (getScore() == 17)
-            changeBack(R.drawable.sketch18); // Change the source of the image
+        if (backg == 1)
+            changeBack(R.drawable.sketch1); // Change the source of the image : Zoo
+        if (backg == 2)
+            changeBack(R.drawable.sketch4); // Change the source of the image : Kastra
+        if (backg == 3)
+            changeBack(R.drawable.sketch7); // Change the source of the image : Dimitris
+        if (backg == 4)
+            changeBack(R.drawable.sketch10); // Change the source of the image : Rotonda
+        if (backg == 5)
+            changeBack(R.drawable.sketch13); // Change the source of the image : Lefkos
+        if (backg == 6)
+            changeBack(R.drawable.sketch16); // Change the source of the image : Alexandros
     }
 
     void changeBack(int img) {

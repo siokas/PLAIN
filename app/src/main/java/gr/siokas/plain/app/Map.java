@@ -95,7 +95,7 @@ public class Map extends Activity {
         zoo_bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                wrong();
+                wrong(1);
             }
         });
 
@@ -105,7 +105,7 @@ public class Map extends Activity {
                 if (getScore() == 3)
                     right();
                 else
-                    wrong();
+                    wrong(2);
             }
         });
 
@@ -115,7 +115,7 @@ public class Map extends Activity {
                 if (getScore() == 6)
                     right();
                 else
-                    wrong();
+                    wrong(3);
             }
         });
 
@@ -125,7 +125,7 @@ public class Map extends Activity {
                 if (getScore() == 9)
                     right();
                 else
-                    wrong();
+                    wrong(4);
             }
         });
 
@@ -135,7 +135,7 @@ public class Map extends Activity {
                 if (getScore() == 12)
                     right();
                 else
-                    wrong();
+                    wrong(5);
             }
         });
 
@@ -145,7 +145,7 @@ public class Map extends Activity {
                 if (getScore() == 15)
                     right();
                 else
-                    wrong();
+                    wrong(6);
             }
         });
 
@@ -156,8 +156,10 @@ public class Map extends Activity {
         finish();
     }
 
-    void wrong() {
-        startActivity(new Intent(Map.this, WrongDecision.class));
+    void wrong(int x) {
+        Intent intent = new Intent(Map.this, WrongDecision.class);
+        intent.putExtra("mon", x);
+        startActivity(intent);
         finish();
     }
 

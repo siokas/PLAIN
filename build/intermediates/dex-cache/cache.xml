@@ -2,16 +2,16 @@
 <pre-dex-items>
 
     <item
-        dex="/Users/apostolossiokas/Documents/Github/PLAIN/app/build/intermediates/pre-dexed/debug/support-v4-19.1.0-abb20c27e28488b6c6bcffeb8adaad1c3b4f5bf5.jar"
-        jar="/Users/apostolossiokas/Documents/Software Developing/sdk/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67"/>
-    <item
         dex="/Users/apostolossiokas/Documents/Github/PLAIN/app/build/intermediates/pre-dexed/debug/classes-0d5d5640d7a966ae491ff3b0b2444486632c86b8.jar"
         jar="/Users/apostolossiokas/Documents/Github/PLAIN/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/classes.jar"
         jumboMode="false"
         revision="19.1.0"
         sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28"/>
+    <item
+        dex="/Users/apostolossiokas/Documents/Github/PLAIN/app/build/intermediates/pre-dexed/debug/support-v4-19.1.0-abb20c27e28488b6c6bcffeb8adaad1c3b4f5bf5.jar"
+        jar="/Users/apostolossiokas/Documents/Software Developing/sdk/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67"/>
 
 </pre-dex-items>
